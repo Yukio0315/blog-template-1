@@ -1,4 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
+import ctfConfig from './lib/config'
+import createClient from './plugins/contentful'
 
 export default {
   mode: 'universal',
@@ -30,14 +32,15 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/contentful'],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Nuxt.js modules
@@ -71,6 +74,24 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.node = {
+        fs: 'empty'
+      }
+    }
+  },
+  generate: {
+    routs() {
+      const cdaClient = createClient(ctfConfig)
+      console.log(cdaClient)
+
+      return cdaClient
+        .getEntries({
+          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
+        })
+        .then((entries) => {
+          return [...entries.items.map((entry) => `/blog/${entry.fields.slug}`)]
+        })
+    }
   }
 }
