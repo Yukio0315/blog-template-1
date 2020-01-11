@@ -7,7 +7,7 @@ const defaultConfig = {
 }
 
 module.exports = {
-  createContent(config = defaultConfig) {
+  createClient(config = defaultConfig) {
     return contentful.createClient({
       accessToken: config.CTF_CDA_ACCESS_TOKEN,
       space: config.CTF_SPACE_ID

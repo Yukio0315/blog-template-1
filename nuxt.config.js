@@ -1,6 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 import ctfConfig from './lib/config'
-import createClient from './plugins/contentful'
+import { createClient } from './plugins/contentful'
 
 export default {
   mode: 'universal',
@@ -81,16 +81,18 @@ export default {
     }
   },
   generate: {
-    routs() {
-      const cdaClient = createClient(ctfConfig)
-      console.log(cdaClient)
-
-      return cdaClient
+    routes() {
+      return createClient(ctfConfig)
         .getEntries({
           content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
         })
         .then((entries) => {
-          return [...entries.items.map((entry) => `/blog/${entry.fields.slug}`)]
+          return entries.items.map((entry) => {
+            return {
+              route: `/blog/${entry.fields.slug}`,
+              payload: entry.fields
+            }
+          })
         })
     }
   }
