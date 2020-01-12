@@ -1,0 +1,9 @@
+<section class="post-list">
+  <div>aaa</div>
+  <PostCard
+    v-for="post in posts"
+    :title="post.title"
+    :slug="post.slug"
+    key="post.id"
+  />
+</section>
