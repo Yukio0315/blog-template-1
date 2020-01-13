@@ -12,11 +12,6 @@ export default {
       type: String,
       required: true
     }
-  },
-  computed: {
-    postLink() {
-      return `/blog/${this.slug}`
-    }
   }
 }
 </script>

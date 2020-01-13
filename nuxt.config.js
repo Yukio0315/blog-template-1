@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import StylelintPlugin from 'stylelint-webpack-plugin'
 import ctfConfig from './lib/config'
 import { createClient } from './plugins/contentful'
 
@@ -10,6 +11,9 @@ export default {
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -40,7 +44,8 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/stylelint-module'
   ],
   /*
    ** Nuxt.js modules
@@ -77,6 +82,13 @@ export default {
     extend(config, ctx) {
       config.node = {
         fs: 'empty'
+      }
+      if (ctx.isDev && ctx.isClient) {
+        config.plugins.push(
+          new StylelintPlugin({
+            files: ['**/*.vue', '**/*.scss']
+          })
+        )
       }
     }
   },

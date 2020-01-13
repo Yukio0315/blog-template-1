@@ -2,3 +2,7 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+$medium: 768px;
+$screen-medium-wide: 'only screen and (min-width: #{$medium}) and (max-device-aspect-ratio: 9 / 16)';
+$main-color: #29206d;
+$opponent-color: #750f39;
