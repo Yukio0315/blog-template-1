@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Header from '~/components/Header/Header'
-import Footer from '~/components/Footer/Footer'
+import Header from '~/components/Navigation/Header/Header'
+import Footer from '~/components/Navigation/Footer/Footer'
 export default {
   components: {
     Header,
@@ -17,4 +17,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+html {
+  font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN',
+    'Hiragino Mincho Pro', HGS明朝E, メイリオ, Meiryo, serif;
+}
+</style>
