@@ -1,14 +1,14 @@
 <template>
   <div class="default">
-    <Header></Header>
+    <Header />
     <nuxt />
-    <Footer></Footer>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Navigation/Header/Header'
-import Footer from '@/components/Navigation/Footer/Footer'
+import Header from '@/components/Navigation/TheHeader/TheHeader'
+import Footer from '@/components/Navigation/TheFooter/TheFooter'
 export default {
   components: {
     Header,
@@ -21,5 +21,8 @@ export default {
 html {
   font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN',
     'Hiragino Mincho Pro', HGS明朝E, メイリオ, Meiryo, serif;
+}
+a {
+  text-decoration: none;
 }
 </style>

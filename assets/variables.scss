@@ -2,7 +2,16 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+$width-base: 1200px;
+$width-min: 800px;
+
+$font-base: arial;
+$font-serif: sans-serif;
+
 $medium: 768px;
 $screen-medium-wide: 'only screen and (min-width: #{$medium}) and (max-device-aspect-ratio: 9 / 16)';
-$primary: #29206d;
-$accent: #750f39;
+
+$color-main: #29206d;
+$color-sub: #f7f7f7;
+$color-font: black;
+$color-accent: #750f39;

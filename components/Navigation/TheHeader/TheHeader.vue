@@ -1,7 +1,7 @@
 <template src="./template.html" />
 
 <script>
-import NavbarList from '@/components/Navigation/Header/NavbarList/NavbarList'
+import NavbarList from '@/components/Navigation/TheHeader/NavbarList/NavbarList'
 export default {
   components: {
     NavbarList
