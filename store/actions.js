@@ -22,5 +22,8 @@ export default {
         commit('setPosts', result)
       })
     // .catch((e) => context.error(e))
+  },
+  toggleMenu({ commit }) {
+    commit('toggleMenu')
   }
 }

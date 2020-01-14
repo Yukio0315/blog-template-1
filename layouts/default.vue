@@ -1,18 +1,27 @@
 <template>
   <div class="default">
-    <Header />
+    <TheHeader />
+    <TheMenu v-show="displayMenu" />
     <nuxt />
-    <Footer />
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Navigation/TheHeader/TheHeader'
-import Footer from '@/components/Navigation/TheFooter/TheFooter'
+import TheHeader from '@/components/Navigation/TheHeader/TheHeader'
+import TheFooter from '@/components/Navigation/TheFooter/TheFooter'
+import TheMenu from '@/components/Navigation/TheMenu/TheMenu'
+
 export default {
   components: {
-    Header,
-    Footer
+    TheHeader,
+    TheFooter,
+    TheMenu
+  },
+  computed: {
+    displayMenu() {
+      return this.$store.state.displayMenu
+    }
   }
 }
 </script>

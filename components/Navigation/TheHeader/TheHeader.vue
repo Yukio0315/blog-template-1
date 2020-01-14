@@ -2,9 +2,12 @@
 
 <script>
 import NavbarList from '@/components/Navigation/TheHeader/NavbarList/NavbarList'
+import TheMenuToggle from '@/components/Navigation/TheHeader/TheMenuToggle/TheMenuToggle'
+
 export default {
   components: {
-    NavbarList
+    NavbarList,
+    TheMenuToggle
   },
   data() {
     return {

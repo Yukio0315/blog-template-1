@@ -6,11 +6,12 @@ const defaultConfig = {
   CTF_SPACE_ID: process.env.CTF_SPACE_ID
 }
 
-module.exports = {
-  createClient(config = defaultConfig) {
-    return contentful.createClient({
-      accessToken: config.CTF_CDA_ACCESS_TOKEN,
-      space: config.CTF_SPACE_ID
-    })
-  }
+export function createClient(config = defaultConfig) {
+  return contentful.createClient({
+    accessToken: config.CTF_CDA_ACCESS_TOKEN,
+    space: config.CTF_SPACE_ID
+  })
 }
+
+// TODO: delete export
+export default ''

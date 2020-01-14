@@ -1,3 +1,4 @@
 export default () => ({
-  loadedPosts: []
+  posts: [],
+  displayMenu: false
 })

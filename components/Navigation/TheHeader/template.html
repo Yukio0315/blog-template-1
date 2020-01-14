@@ -1,10 +1,11 @@
 <header>
   <div class="logo">
-    <nuxt-link to="/"><img class="logo" src="~/assets/logo.png"/></nuxt-link>
+    <nuxt-link to="/"><img class="logo" src="@/static/logo.png"/></nuxt-link>
   </div>
   <nav>
-    <ul>
+    <ul class="nav-bar">
       <NavbarList v-for="item in menu" :key="item.id" :item="item" />
+      <TheMenuToggle class="menu-button" />
     </ul>
   </nav>
 </header>
