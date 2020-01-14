@@ -1,11 +1,15 @@
-<header>
-  <div class="logo">
-    <nuxt-link to="/"><img class="logo" src="@/static/logo.png"/></nuxt-link>
-  </div>
-  <nav>
-    <ul class="nav-bar">
-      <NavbarList v-for="item in menu" :key="item.id" :item="item" />
-      <TheMenuToggle class="menu-button" />
-    </ul>
+<header class="header">
+  <section class="header-logo">
+    <nuxt-link to="/"><img src="@/static/logo.png"/></nuxt-link>
+  </section>
+  <section class="header-contact-box">
+    <p class="header-contact-box-ask">お問い合わせはこちら</p>
+    <a href="tel:03-0000-0000" class="header-contact-box-tel"
+      >TEL:03-0000-0000</a
+    >
+  </section>
+  <nav class="header-nav">
+    <NavbarList class="header-nav-list" :menu="menu" />
+    <!-- <TheMenuToggle class="header-menu-button" /> -->
   </nav>
 </header>

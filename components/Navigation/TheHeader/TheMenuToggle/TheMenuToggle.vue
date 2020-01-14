@@ -9,8 +9,6 @@ export default {
   },
   methods: {
     toggleMenu() {
-      // eslint-disable-next-line
-      console.log('toggle')
       this.$store.dispatch('toggleMenu')
     }
   }

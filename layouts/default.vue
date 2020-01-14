@@ -31,6 +31,9 @@ html {
   font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN',
     'Hiragino Mincho Pro', HGS明朝E, メイリオ, Meiryo, serif;
 }
+body {
+  background-color: $color-background;
+}
 a {
   text-decoration: none;
 }
