@@ -2,7 +2,7 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
-$width-base: 1200px;
+$width-base: 1240px;
 $width-min: 800px;
 
 $font-base: arial;
@@ -15,24 +15,3 @@ $color-main: #29206d;
 $color-sub: #f7f7f7;
 $color-font: black;
 $color-accent: #750f39;
-
-$layer: (
-  modal: 100,
-  header: 20,
-  tooltip: 1,
-  default: 1
-);
-
-@mixin z-index($key) {
-  z-index: map-get($layer, $key);
-}
-
-$breakpoints: (
-  m: 'only screen and (max-width: 768px)'
-);
-
-@mixin media($breakpoints) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
-  }
-}

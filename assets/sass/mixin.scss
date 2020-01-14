@@ -1,0 +1,20 @@
+$layer: (
+  modal: 100,
+  header: 20,
+  tooltip: 1,
+  default: 1
+);
+
+@mixin z-index($key) {
+  z-index: map-get($layer, $key);
+}
+
+$breakpoints: (
+  m: 'only screen and (max-width: 768px)'
+);
+
+@mixin media($breakpoints) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

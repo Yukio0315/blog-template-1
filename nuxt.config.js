@@ -50,7 +50,10 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: ['assets/scss/mixin.scss', 'assets/scss/variables.scss']
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

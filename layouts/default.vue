@@ -17,12 +17,17 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 html {
   font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN',
     'Hiragino Mincho Pro', HGS明朝E, メイリオ, Meiryo, serif;
 }
 a {
   text-decoration: none;
+}
+.default {
+  display: grid;
+  width: $width-base;
+  margin: auto;
 }
 </style>
