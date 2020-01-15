@@ -11,7 +11,7 @@ export default {
         { id: 3, link: '/reason', title: '弊社が選ばれる理由', sub: 'Reasons' },
         { id: 4, link: '/blog', title: 'ブログ', sub: 'Blog' },
         { id: 5, link: '/access', title: 'アクセス・営業時間', sub: 'Access' },
-        { id: 6, link: '/form', title: 'お問い合わせフォーム', sub: 'Form' }
+        { id: 6, link: '/form', title: 'お問い合わせ', sub: 'Form' }
       ]
     }
   }

@@ -1,5 +1,6 @@
 .navbar-list-content {
   display: table;
+  table-layout: fixed;
   list-style: none;
   width: 100%;
   color: black;
@@ -8,13 +9,23 @@
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    transition: all 500ms 0s ease-out;
 
-    &-main {
-      color: $color-font;
+    &:hover {
+      background-color: $color-main;
     }
 
-    &-sub {
+    &-link {
       color: $color-font;
+      &:hover {
+        color: white;
+      }
+      &:hover &-sub {
+        color: white;
+      }
+      &-sub {
+        color: gray;
+      }
     }
   }
 }

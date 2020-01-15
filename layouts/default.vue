@@ -39,7 +39,7 @@ a {
 }
 .default {
   display: grid;
-  width: $width-base;
+  max-width: $width-base;
   margin: auto;
 }
 </style>

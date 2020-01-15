@@ -3,13 +3,13 @@
     <nuxt-link to="/"><img src="@/static/logo.png"/></nuxt-link>
   </section>
   <section class="header-contact-box">
-    <p class="header-contact-box-ask">お問い合わせはこちら</p>
-    <a href="tel:03-0000-0000" class="header-contact-box-tel"
-      >TEL:03-0000-0000</a
-    >
+    <a href="tel:03-0000-0000">
+      <p class="header-contact-box-ask">ご予約はこちら</p>
+      <p class="header-contact-box-tel">TEL:03-0000-0000</p>
+    </a>
   </section>
   <nav class="header-nav">
-    <NavbarList class="header-nav-list" :menu="menu" />
+    <NavbarList class="header-nav-list" />
     <!-- <TheMenuToggle class="header-menu-button" /> -->
   </nav>
 </header>

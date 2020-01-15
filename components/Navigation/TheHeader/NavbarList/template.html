@@ -1,8 +1,8 @@
 <ul class="navbar-list-content">
   <li class="navbar-list-content-li" v-for="item in menu" key="item.id">
-    <nuxt-link :to="item.link"
-      ><p class="navbar-list-content-li-main">{{ item.title }}</p>
-      <p class="navbar-list-content-li-sub">{{ item.sub }}</p>
+    <nuxt-link :to="item.link" class="navbar-list-content-li-link"
+      ><p class="navbar-list-content-li-link-main">{{ item.title }}</p>
+      <p class="navbar-list-content-li-link-sub">{{ item.sub }}</p>
     </nuxt-link>
   </li>
 </ul>
