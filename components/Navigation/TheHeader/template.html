@@ -1,15 +1,8 @@
 <header class="header">
-  <section class="header-logo">
-    <nuxt-link to="/"><img src="@/static/logo.png"/></nuxt-link>
-  </section>
-  <section class="header-contact-box">
-    <a href="tel:03-0000-0000">
-      <p class="header-contact-box-ask">ご予約はこちら</p>
-      <p class="header-contact-box-tel">TEL:03-0000-0000</p>
-    </a>
-  </section>
-  <nav class="header-nav">
-    <NavbarList class="header-nav-list" />
-    <!-- <TheMenuToggle class="header-menu-button" /> -->
-  </nav>
+  <div v-if="$mq==='desktop'" class="header-pc-not-fixed">
+    <TheHeaderPC />
+  </div>
+  <div v-if="$mq==='mobile'" class="header-sp-fixed">
+    <TheHeaderSP />
+  </div>
 </header>

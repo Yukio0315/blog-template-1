@@ -1,13 +1,13 @@
 <template src="./template.html" />
 
 <script>
-import NavbarList from '@/components/Navigation/TheHeader/NavbarList/NavbarList'
-import TheMenuToggle from '@/components/Navigation/TheHeader/TheMenuToggle/TheMenuToggle'
+import TheHeaderPC from '@/components/Navigation/TheHeader/TheHeaderPC/TheHeaderPC'
+import TheHeaderSP from '@/components/Navigation/TheHeader/TheHeaderSP/TheHeaderSP'
 
 export default {
   components: {
-    NavbarList,
-    TheMenuToggle
+    TheHeaderPC,
+    TheHeaderSP
   }
 }
 </script>

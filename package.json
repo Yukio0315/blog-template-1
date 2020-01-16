@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
+    "animejs": "^3.1.0",
     "marked": "^0.8.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-mq": "^1.0.1"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

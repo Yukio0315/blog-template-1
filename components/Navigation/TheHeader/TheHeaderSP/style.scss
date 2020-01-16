@@ -1,0 +1,16 @@
+.header-sp {
+  display: grid;
+  grid-template-columns: $logo 1fr 30px;
+
+  &-logo {
+    grid-column: 1 / 2;
+    width: auto;
+  }
+
+  &-content {
+    grid-column: 2 / 3;
+  }
+  &-menu-toggle {
+    grid-column: 3 / 4;
+  }
+}
