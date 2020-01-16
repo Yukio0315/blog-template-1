@@ -36,7 +36,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/contentful', { src: '~/plugins/mq', ssr: true }],
+  plugins: [
+    '~/plugins/contentful',
+    { src: '~/plugins/mq', ssr: true },
+    { src: '~plugins/font-awesome', ssr: true }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

@@ -1,4 +1,8 @@
 <div>
-  <button v-on:click="toggleMenu" v-show="displayMenu">×</button>
-  <button v-on:click="toggleMenu" v-show="!displayMenu">◯</button>
+  <button v-on:click="toggleMenu" v-show="displayMenu">
+    <fa-icon icon="bars" />
+  </button>
+  <button v-on:click="toggleMenu" v-show="!displayMenu">
+    <fa-icon icon="bars" style="font-size: 30px" />
+  </button>
 </div>
