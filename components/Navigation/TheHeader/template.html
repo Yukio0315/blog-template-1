@@ -4,6 +4,8 @@
   </div>
   <div v-if="$mq==='mobile'" class="header-sp-fixed">
     <TheHeaderSP />
-    <TheMenuSP :menu="menu" v-show="displayMenu" />
+    <nav v-show="displayMenu">
+      <TheMenuSP :menu="menu" />
+    </nav>
   </div>
 </header>
