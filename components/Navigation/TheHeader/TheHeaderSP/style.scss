@@ -1,6 +1,6 @@
 .header-sp {
   display: grid;
-  grid-template-columns: $logo 1fr 30px;
+  grid-template-columns: $logo 1fr 100px;
 
   &-logo {
     grid-column: 1 / 2;
@@ -9,8 +9,11 @@
 
   &-content {
     grid-column: 2 / 3;
+    margin: auto;
+    font-size: 20px;
   }
   &-menu-toggle {
     grid-column: 3 / 4;
+    margin: auto;
   }
 }

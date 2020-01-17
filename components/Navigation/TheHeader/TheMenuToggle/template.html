@@ -1,8 +1,8 @@
 <div>
   <button v-on:click="toggleMenu" v-show="displayMenu">
-    <fa-icon icon="bars" />
+    <fa-icon icon="times" class="toggle-menu-icon-close" />
   </button>
   <button v-on:click="toggleMenu" v-show="!displayMenu">
-    <fa-icon icon="bars" style="font-size: 30px" />
+    <fa-icon icon="bars" class="toggle-menu-icon-open" />
   </button>
 </div>
