@@ -1,3 +1,7 @@
-.header-sp-fix {
-  position: fixed;
+.header-sp-fixed {
+  display: grid;
+  grid-template-rows: $header-height-sp auto;
+  &-menu {
+    @include z-index(header);
+  }
 }

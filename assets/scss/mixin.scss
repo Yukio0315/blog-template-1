@@ -10,8 +10,9 @@ $layer: (
 }
 
 $breakpoints: (
-  m: 'only screen and (width < 768px)',
-  l: 'only screen and (768px <= width <= 1200px)'
+  s: 'only screen and (width <= 481px)',
+  m: 'only screen and (481 < width <= 769px)',
+  l: 'only screen and (769px < width <= 1200px)'
 );
 
 @mixin media($breakpoint) {

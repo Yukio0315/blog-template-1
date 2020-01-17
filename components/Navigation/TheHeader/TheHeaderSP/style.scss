@@ -1,10 +1,12 @@
 .header-sp {
   display: grid;
-  grid-template-columns: $logo 1fr 100px;
+  height: $header-height-sp;
+  grid-template-rows: $header-height-sp;
+  grid-template-columns: $logo 1fr $header-height-sp;
 
   &-logo {
     grid-column: 1 / 2;
-    width: auto;
+    margin: auto;
   }
 
   &-content {
@@ -12,6 +14,7 @@
     margin: auto;
     font-size: 20px;
   }
+
   &-menu-toggle {
     grid-column: 3 / 4;
     margin: auto;

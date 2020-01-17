@@ -1,0 +1,21 @@
+.menu-sp {
+  display: grid;
+  &-item {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+    color: black;
+    background-color: white;
+    &-arrow {
+      grid-column: 1 / 2;
+    }
+    &-title {
+      grid-column: 2 / 3;
+    }
+    &-sub {
+      grid-column: 3 / 4;
+    }
+  }
+}

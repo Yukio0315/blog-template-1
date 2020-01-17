@@ -2,9 +2,9 @@
   <div v-if="$mq==='desktop'" class="header-pc-not-fixed">
     <TheHeaderPC :menu="menu" />
   </div>
-  <div v-if="$mq==='mobile'" class="header-sp-fixed">
+  <div v-if="$mq==='mobile' || $mq==='tablet'" class="header-sp-fixed">
     <TheHeaderSP />
-    <nav v-show="displayMenu">
+    <nav v-show="displayMenu" class="header-sp-fixed-menu">
       <TheMenuSP :menu="menu" />
     </nav>
   </div>

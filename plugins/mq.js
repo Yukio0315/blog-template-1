@@ -3,8 +3,8 @@ import VueMq from 'vue-mq'
 
 Vue.use(VueMq, {
   breakpoints: {
-    mobile: 768,
-    // tablet: 1023,
+    mobile: 481,
+    tablet: 769,
     desktop: Infinity
   },
   defaultBreakpoint: 'sm'
