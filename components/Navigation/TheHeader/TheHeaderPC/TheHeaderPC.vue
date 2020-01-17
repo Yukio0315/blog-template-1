@@ -6,6 +6,12 @@ import NavbarList from '@/components/Navigation/TheHeader/NavbarList/NavbarList'
 export default {
   components: {
     NavbarList
+  },
+  props: {
+    menu: {
+      type: Array,
+      required: true
+    }
   }
 }
 </script>

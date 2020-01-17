@@ -1,7 +1,11 @@
 import Vue from 'vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import {
+  faBars,
+  faTimes,
+  faChevronDown
+} from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
   faInstagram,
@@ -9,7 +13,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faBars, faTimes)
+library.add(faBars, faTimes, faChevronDown)
 library.add(faTwitter, faInstagram, faLine)
 
 Vue.component('fa-icon', FontAwesomeIcon)

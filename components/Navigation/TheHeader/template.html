@@ -1,8 +1,9 @@
 <header class="header">
   <div v-if="$mq==='desktop'" class="header-pc-not-fixed">
-    <TheHeaderPC />
+    <TheHeaderPC :menu="menu" />
   </div>
   <div v-if="$mq==='mobile'" class="header-sp-fixed">
     <TheHeaderSP />
+    <TheMenuSP :menu="menu" v-show="displayMenu" />
   </div>
 </header>

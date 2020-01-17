@@ -1,7 +1,6 @@
 <template>
   <div class="default">
     <TheHeader />
-    <TheMenu v-show="displayMenu" />
     <nuxt />
     <TheFooter />
   </div>
@@ -10,18 +9,11 @@
 <script>
 import TheHeader from '@/components/Navigation/TheHeader/TheHeader'
 import TheFooter from '@/components/Navigation/TheFooter/TheFooter'
-import TheMenu from '@/components/Navigation/TheMenu/TheMenu'
 
 export default {
   components: {
     TheHeader,
-    TheFooter,
-    TheMenu
-  },
-  computed: {
-    displayMenu() {
-      return this.$store.state.displayMenu
-    }
+    TheFooter
   }
 }
 </script>
