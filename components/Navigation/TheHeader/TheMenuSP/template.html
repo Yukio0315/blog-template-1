@@ -1,7 +1,9 @@
 <ul class="menu-sp">
   <section v-for="item in menu">
     <nuxt-link :to="item.link" class="menu-sp-item">
-      <li class="menu-sp-item-arrow"><fa-icon icon="chevron-right" /></li>
+      <li class="menu-sp-item-arrow">
+        <font-awesome-icon icon="chevron-right" />
+      </li>
       <li class="menu-sp-item-title">{{item.title}}</li>
       <li class="menu-sp-item-sub">{{item.sub}}</li>
     </nuxt-link>

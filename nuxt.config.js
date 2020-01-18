@@ -36,11 +36,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/contentful',
-    { src: '~/plugins/mq', ssr: true },
-    { src: '~plugins/font-awesome', ssr: true }
-  ],
+  plugins: ['~/plugins/contentful', { src: '~/plugins/mq', ssr: true }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -54,7 +50,24 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources'],
+  modules: [
+    '@nuxtjs/style-resources',
+    [
+      'nuxt-fontawesome',
+      {
+        imports: [
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['faBars', 'faTimes', 'faChevronRight']
+          },
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['faTwitter', 'faInstagram', 'faLine']
+          }
+        ]
+      }
+    ]
+  ],
   styleResources: {
     scss: ['assets/scss/mixin.scss', 'assets/scss/variables.scss']
   },
