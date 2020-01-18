@@ -2,7 +2,7 @@
   display: grid;
   height: $header-height-sp;
   grid-template-rows: $header-height-sp;
-  grid-template-columns: $logo 1fr $header-height-sp;
+  grid-template-columns: $logo-x 1fr $header-height-sp;
 
   &-logo {
     grid-column: 1 / 2;

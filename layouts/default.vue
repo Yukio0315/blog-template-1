@@ -33,14 +33,8 @@ a {
   display: grid;
   max-width: $width-base;
   margin: auto;
+  grid-template-rows: $header-height-pc $header-height-pc-fixed auto $hooter-height-pc;
   @include media(m) {
-    height: 100vh;
-    grid-template-rows: $header-height-sp auto;
-    .main {
-      overflow: auto;
-    }
-  }
-  @include media(s) {
     height: 100vh;
     grid-template-rows: $header-height-sp auto;
     .main {

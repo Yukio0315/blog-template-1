@@ -2,12 +2,14 @@
 
 <script>
 import TheHeaderPC from '@/components/Navigation/TheHeader/TheHeaderPC/TheHeaderPC'
+import TheHeaderPCFixed from '@/components/Navigation/TheHeader/TheHeaderPCFixed/TheHeaderPCFixed'
 import TheHeaderSP from '@/components/Navigation/TheHeader/TheHeaderSP/TheHeaderSP'
 import TheMenuSP from '@/components/Navigation/TheHeader/TheMenuSP/TheMenuSP'
 
 export default {
   components: {
     TheHeaderPC,
+    TheHeaderPCFixed,
     TheHeaderSP,
     TheMenuSP
   },
@@ -21,12 +23,25 @@ export default {
         { id: 4, link: '/blog', title: 'ブログ', sub: 'Blog' },
         { id: 5, link: '/access', title: 'アクセス・営業時間', sub: 'Access' },
         { id: 6, link: '/form', title: 'お問い合わせ', sub: 'Form' }
-      ]
+      ],
+      scrollY: 0,
+      scrollYTarget: 138
     }
   },
   computed: {
     displayMenu() {
       return this.$store.state.displayMenu
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.calculateScrollY)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.calculateScrollY)
+  },
+  methods: {
+    calculateScrollY() {
+      this.scrollY = window.scrollY
     }
   }
 }
