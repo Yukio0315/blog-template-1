@@ -1,21 +1,16 @@
 .navbar-list-content {
-  display: table;
-  table-layout: fixed;
   list-style: none;
-  width: 100%;
+  display: grid;
   color: black;
-
+  grid-template-columns: repeat(7, calc(100% / 7));
   &-li {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    transition: all 500ms 0s ease-out;
-
     &:hover {
       background-color: $color-main;
     }
 
     &-link {
+      display: grid;
+      grid-template-rows: 50px 30px;
       color: $color-font;
       &:hover {
         color: white;
@@ -23,7 +18,17 @@
       &:hover &-sub {
         color: white;
       }
+      &-main {
+        text-align: center;
+        align-self: center;
+        padding-top: 5px;
+        font-size: 15px;
+        grid-row: 1 / 2;
+      }
       &-sub {
+        text-align: center;
+        font-size: 10px;
+        grid-row: 2 / 3;
         color: gray;
       }
     }

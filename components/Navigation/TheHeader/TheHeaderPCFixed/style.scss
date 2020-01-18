@@ -1,14 +1,16 @@
 .header-pc-fixed {
   display: grid;
   grid-template-rows: 30;
-  grid-template-columns: $header-height-pc-fixed 1fr 300px;
+  grid-template-columns: $logo-y-pc-fixed 1fr 300px;
   position: fixed;
+  width: $width-base;
+  max-width: 100%;
   top: 0;
   @include z-index(header);
   background-color: white;
 
   &-logo {
-    grid-row: 1 / 3;
+    grid-row: 1 / 2;
     margin: auto;
     background-color: white;
   }
