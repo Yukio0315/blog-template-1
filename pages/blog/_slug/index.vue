@@ -5,11 +5,6 @@ import marked from 'marked'
 import { createClient } from '~/plugins/contentful'
 
 export default {
-  computed: {
-    compiledMarkdown() {
-      return marked(this.post.description)
-    }
-  },
   asyncData({ params, payload }) {
     if (payload) {
       return {
@@ -24,6 +19,11 @@ export default {
       .then((entry) => {
         return { post: entry.items[0].fields }
       })
+  },
+  computed: {
+    compiledMarkdown() {
+      return marked(this.post.description)
+    }
   }
 }
 </script>

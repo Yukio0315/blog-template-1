@@ -7,13 +7,13 @@ export default {
   components: {
     PostList
   },
+  async fetch({ store }) {
+    await store.dispatch('fetchPosts')
+  },
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts
     }
-  },
-  async fetch({ store }) {
-    await store.dispatch('fetchPosts')
   }
 }
 </script>

@@ -2,13 +2,13 @@
 
 <script>
 export default {
+  async fetch({ store, params }) {
+    await store.dispatch('fetchPosts')
+  },
   computed: {
     posts() {
       return this.$store.getters.posts
     }
-  },
-  async fetch({ store, params }) {
-    await store.dispatch('fetchPosts')
   }
 }
 </script>
