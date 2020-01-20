@@ -1,10 +1,10 @@
 <template src="./template.html" />
 
 <script>
-import HeroImage from '@/components/HeroImage/HeroImage'
+import TheHeroImage from '@/components/TheHeroImage/TheHeroImage'
 export default {
   components: {
-    HeroImage
+    TheHeroImage
   },
   async fetch({ store, params }) {
     await store.dispatch('fetchPosts')
