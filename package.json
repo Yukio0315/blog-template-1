@@ -22,7 +22,9 @@
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "vue-clickaway": "^2.2.2",
-    "vue-mq": "^1.0.1"
+    "vue-mq": "^1.0.1",
+    "vue2-gmap-custom-marker": "^5.5.9",
+    "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

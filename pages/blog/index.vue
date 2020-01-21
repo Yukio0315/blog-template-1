@@ -2,15 +2,12 @@
 
 <script>
 import PostList from '@/components/Posts/PostList/PostList.vue'
-import Breadcrumb from '@/components/Breadcrumb/Breadcrumb.vue'
+import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue'
 
 export default {
   components: {
     PostList,
-    Breadcrumb
-  },
-  async fetch({ store }) {
-    await store.dispatch('fetchPosts')
+    Breadcrumbs
   },
   data() {
     return {
@@ -24,6 +21,9 @@ export default {
     loadedPosts() {
       return this.$store.getters.loadedPosts
     }
+  },
+  async fetch({ store }) {
+    await store.dispatch('fetchPosts')
   }
 }
 </script>

@@ -1,0 +1,12 @@
+<section class="access">
+  <BreadCrumbs :items="breadcrumbsItems" class="access-breadcrumbs" />
+  <!-- <AccessTable /> -->
+  <GoogleMap
+    :lat="gmap.position.lat"
+    :lng="gmap.position.lng"
+    :markers="gmap.markers"
+    :icon="gmap.icon"
+    :size="gmap.size"
+    class="access-google-map"
+  />
+</section>

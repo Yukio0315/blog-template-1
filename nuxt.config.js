@@ -36,7 +36,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/contentful', { src: '~/plugins/mq', ssr: true }],
+  plugins: [
+    '~/plugins/contentful',
+    { src: '~/plugins/mq', ssr: true },
+    { src: '~/plugins/vue2-google-maps', ssr: true }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -111,6 +115,7 @@ export default {
         )
       }
     },
+    transpile: [/^vue2-google-maps($|\/)/, /^vue2-gmap-custom-marker($|\/)/],
     postcss: {
       // Add plugin names as key and arguments as value
       // Install them before as dependencies with npm or yarn
