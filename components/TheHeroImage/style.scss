@@ -32,10 +32,18 @@ $box-width: 400px;
     background-color: #dcf7f4;
     background-image: repeating-linear-gradient(
         45deg,
-        #fff 0px 4px,
-        transparent 4px 12px
+        #fff,
+        #fff 4px,
+        transparent 4px,
+        transparent 12px
       ),
-      repeating-linear-gradient(-45deg, #fff 0px 4px, transparent 4px 10px);
+      repeating-linear-gradient(
+        -45deg,
+        #fff,
+        #fff 4px,
+        transparent 0,
+        transparent 10px
+      );
     opacity: 0.1;
   }
   &-square {
