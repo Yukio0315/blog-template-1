@@ -5,6 +5,14 @@ import { createClient } from './plugins/contentful'
 
 export default {
   mode: 'universal',
+  env: {
+    CTF_PERSON_ID: process.env.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
+    CTF_MEMBER_TYPE_ID: process.env.CTF_MEMBER_TYPE_ID,
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
+    GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
+  },
   /*
    ** Headers of the page
    */
