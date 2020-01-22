@@ -28,7 +28,7 @@ export default {
             offset: { X: 35, Y: -12 }
           }
         ],
-        icon: 'logo-small.png',
+        icon: 'static-logo-small.png',
         size: { height: '600px', width: '600px' }
       }
     }
