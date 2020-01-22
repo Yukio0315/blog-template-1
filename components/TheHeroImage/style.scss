@@ -19,10 +19,11 @@ $box-width: 400px;
   }
   &-video-filter {
     position: absolute;
-    padding-left: 130px;
+    margin-left: 130px;
+    margin-top: 30px;
     top: 130px;
     width: $video-width;
-    height: $video-height;
+    height: 833px;
     @include media(m) {
       width: $video-width-sp;
       height: $video-height-sp;
@@ -31,15 +32,11 @@ $box-width: 400px;
     background-color: #dcf7f4;
     background-image: repeating-linear-gradient(
         45deg,
-        rgba(255, 255, 255, 0.9) 0px 4px,
+        #fff 0px 4px,
         transparent 4px 12px
       ),
-      repeating-linear-gradient(
-        -45deg,
-        rgba(255, 255, 255, 0.9) 0px 4px,
-        transparent 4px 10px
-      );
-    opacity: 10%;
+      repeating-linear-gradient(-45deg, #fff 0px 4px, transparent 4px 10px);
+    opacity: 0.1;
   }
   &-square {
     display: grid;
@@ -52,7 +49,7 @@ $box-width: 400px;
     background-color: $color-main;
     min-width: $box-width;
     height: $video-height / 2;
-    opacity: 90%;
+    opacity: 0.9;
     &-content {
       grid-column: 2 / 3;
       grid-row: 2 / 3;
