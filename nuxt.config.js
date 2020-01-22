@@ -103,11 +103,14 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend(config, { isDev, isClient }) {
       config.node = {
         fs: 'empty'
       }
-      if (ctx.isDev && ctx.isClient) {
+      config.performance = config.performance || {}
+      config.performance.maxEntrypointSize = 700 * 1024
+      config.performance.maxAssetSize = 700 * 1024
+      if (isDev && isClient) {
         config.plugins.push(
           new StylelintPlugin({
             files: ['**/*.vue', '**/*.scss']
