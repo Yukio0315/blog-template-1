@@ -1,4 +1,8 @@
 export default () => ({
   posts: [],
-  displayMenu: false
+  displayMenu: false,
+  seenTopAnime: {
+    showBox: false,
+    showTitle: false
+  }
 })

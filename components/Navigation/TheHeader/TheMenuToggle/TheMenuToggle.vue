@@ -17,7 +17,7 @@ export default {
       this.$store.dispatch('toggleMenu')
     },
     away() {
-      if (this.$store.state.displayMenu) this.$store.dispatch('toggleMenu')
+      if (this.$store.state.displayMenu) this.$store.commit('toggleMenu')
     }
   }
 }

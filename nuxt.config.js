@@ -36,18 +36,24 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#29206d' },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#29206d',
+    background: 'white'
+  },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/styles/main.scss', 'vue2-animate/dist/vue2-animate.min.css'],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     '~/plugins/contentful',
     { src: '~/plugins/mq', ssr: true },
-    { src: '~/plugins/vue2-google-maps', ssr: true }
+    { src: '~/plugins/vue2-google-maps', ssr: true },
+    '~/plugins/mixin'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -143,6 +149,14 @@ export default {
         }
       }
     }
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
+  layoutTransition: {
+    name: 'fade',
+    mode: 'out-in'
   },
   generate: {
     routes() {

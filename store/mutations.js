@@ -4,5 +4,8 @@ export default {
   },
   toggleMenu(state) {
     state.displayMenu = !state.displayMenu
+  },
+  seenTopAnime(state, payload) {
+    state.seenTopAnime[payload] = true
   }
 }

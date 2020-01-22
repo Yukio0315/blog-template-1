@@ -1,14 +1,18 @@
 <template src="./template.html" />
 
 <script>
-import { alterHeroImageBox } from '@/lib/anime.js'
 export default {
-  mounted() {
-    this.transitSquareBox()
+  computed: {
+    seenTopAnime() {
+      return this.$store.state.seenTopAnime
+    }
   },
-  methods: {
-    transitSquareBox() {
-      alterHeroImageBox('.hero-image-square', '42%')
+  async mounted() {
+    if (!this.$store.state.seenTopAnime.showBox) {
+      await this.$delay(3000)
+      this.$store.commit('seenTopAnime', 'showBox')
+      await this.$delay(1000)
+      this.$store.commit('seenTopAnime', 'showTitle')
     }
   }
 }
