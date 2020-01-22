@@ -2,12 +2,16 @@
 
 <script>
 import GoogleMap from '@/components/GoogleMap/GoogleMap.vue'
-import BreadCrumbs from '@/components/Breadcrumbs/Breadcrumbs'
+import BreadCrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue'
+import AccessTable from '@/components/Access/AccessTable/AccessTable.vue'
+import Transportation from '@/components/Access/Transportation/Transportation.vue'
 
 export default {
   components: {
     BreadCrumbs,
-    GoogleMap
+    GoogleMap,
+    AccessTable,
+    Transportation
   },
   data() {
     return {

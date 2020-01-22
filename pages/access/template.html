@@ -1,6 +1,8 @@
 <section class="access">
   <BreadCrumbs :items="breadcrumbsItems" class="access-breadcrumbs" />
-  <!-- <AccessTable /> -->
+  <h3>概要</h3>
+  <AccessTable />
+  <h3>アクセスマップ</h3>
   <GoogleMap
     :lat="gmap.position.lat"
     :lng="gmap.position.lng"
@@ -9,4 +11,5 @@
     :size="gmap.size"
     class="access-google-map"
   />
+  <Transportation />
 </section>

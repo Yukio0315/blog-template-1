@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable vue/attribute-hyphenation -->
   <div>
     <GmapMap
       :center="{ lat, lng }"
