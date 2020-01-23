@@ -1,10 +1,28 @@
 # blog-template-1
 
-> My exceptional Nuxt.js project
+> This is a sample of JAMStack blog.
+
+## Technologies
+
+- Nuxt.js ( SSR + Static generated )
+- Contentful ( Headless CMS )
+- Netlify
+- Vuex
+- Vuetify
+- Sass
+- PostCSS
+- Animate.css
+
+## Deploy
+
+- Deployed on Netlify
+  https://elastic-meninsky-4be4a3.netlify.com
+- Netlify Large Storage
+- GitHub lts
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 

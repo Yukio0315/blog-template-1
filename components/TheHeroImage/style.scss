@@ -11,12 +11,16 @@ $box-width: 400px;
     top: 130px;
     width: $video-width;
     height: $video-height;
+
     @include media(m) {
+      top: 70px;
       width: $video-width-sp;
       height: $video-height-sp;
     }
+
     @include z-index(default);
   }
+
   &-video-filter {
     position: absolute;
     margin-left: 130px;
@@ -24,28 +28,28 @@ $box-width: 400px;
     top: 130px;
     width: $video-width;
     height: 833px;
+
     @include media(m) {
+      top: 70px;
       width: $video-width-sp;
       height: $video-height-sp;
     }
+
     @include z-index(filter);
     background-color: #dcf7f4;
-    background-image: repeating-linear-gradient(
-        45deg,
-        #fff,
-        #fff 4px,
-        transparent 4px,
-        transparent 12px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        #fff,
-        #fff 4px,
-        transparent 0,
-        transparent 10px
-      );
+    background-image: repeating-linear-gradient(45deg,
+      #fff,
+      #fff 4px,
+      transparent 4px,
+      transparent 12px),
+    repeating-linear-gradient(-45deg,
+      #fff,
+      #fff 4px,
+      transparent 0,
+      transparent 10px);
     opacity: 0.1;
   }
+
   &-square {
     display: grid;
     grid-template-columns: 1fr $box-width;
@@ -55,9 +59,16 @@ $box-width: 400px;
     left: 0;
     top: $header-height-pc + $video-height / 4;
     background-color: $color-main;
+    width: 42%;
     min-width: $box-width;
     height: $video-height / 2;
     opacity: 0.9;
+
+    @include media(m) {
+      top: 70px;
+      height: $video-height-sp * 3 / 4;
+    }
+
     &-content {
       grid-column: 2 / 3;
       grid-row: 2 / 3;
@@ -66,6 +77,7 @@ $box-width: 400px;
       padding-right: 5%;
     }
   }
+
   &-scroll {
     display: grid;
     position: absolute;
@@ -73,15 +85,19 @@ $box-width: 400px;
     margin-left: 35%;
     @include z-index(item);
     color: white;
+
     &-character {
       font-size: 20px;
     }
+
     &-arrow-top {
       margin-left: 15px;
     }
+
     &-arrow-middle {
       margin-left: 15px;
     }
+
     &-arrow-bottom {
       margin-left: 15px;
     }

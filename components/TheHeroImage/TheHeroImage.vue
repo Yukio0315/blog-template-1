@@ -9,7 +9,7 @@ export default {
   },
   async mounted() {
     if (!this.$store.state.seenTopAnime.showBox) {
-      await this.$delay(3000)
+      await this.$delay(1500)
       this.$store.commit('seenTopAnime', 'showBox')
       await this.$delay(1000)
       this.$store.commit('seenTopAnime', 'showTitle')
