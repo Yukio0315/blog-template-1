@@ -1,13 +1,15 @@
 <section class="hero-image">
-  <video
-    src="~/assets/movies/heroMovie.mp4"
-    autoplay
-    loop
-    muted
-    poster="hero-image.png"
-    class="hero-image-video"
-  ></video>
-  <div class="hero-image-video-filter"></div>
+  <div class="hero-image-video">
+    <video
+      src="~/assets/movies/heroMovie.mp4"
+      autoplay
+      loop
+      muted
+      poster="hero-image.png"
+      class="hero-image-video-main"
+    ></video>
+    <div class="hero-image-video-wrap"></div>
+  </div>
   <transition name="slideLeft">
     <section v-if="seenTopAnime.showBox" class="hero-image-square">
       <nuxt-link to="/company" class="hero-image-square-content">

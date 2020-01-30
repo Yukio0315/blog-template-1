@@ -6,48 +6,46 @@ $box-width: 400px;
 
 .hero-image {
   &-video {
-    position: absolute;
+    position: relative;
     padding-left: 130px;
-    top: 130px;
-    width: $video-width;
-    height: $video-height;
 
     @include media(m) {
-      top: 70px;
-      width: $video-width-sp;
-      height: $video-height-sp;
+      padding: 0;
     }
 
-    @include z-index(default);
-  }
-
-  &-video-filter {
-    position: absolute;
-    margin-left: 130px;
-    margin-top: 30px;
-    top: 130px;
-    width: $video-width;
-    height: 833px;
-
-    @include media(m) {
-      top: 70px;
-      width: $video-width-sp;
-      height: $video-height-sp;
+    &-main {
+      min-width: 100%;
+      max-width: 130%;
+      @include z-index(default);
+      @include media(m) {
+        top: 0;
+        padding: 0;
+      }
     }
+    &-wrap {
+      position: absolute;
+      top: 0px;
+      width: 200%;
+      height: 100%;
 
-    @include z-index(filter);
-    background-color: #dcf7f4;
-    background-image: repeating-linear-gradient(45deg,
-      #fff,
-      #fff 4px,
-      transparent 4px,
-      transparent 12px),
-    repeating-linear-gradient(-45deg,
-      #fff,
-      #fff 4px,
-      transparent 0,
-      transparent 10px);
-    opacity: 0.1;
+      @include z-index(filter);
+      background-color: #dcf7f4;
+      background: repeating-linear-gradient(
+          45deg,
+          #fff,
+          #fff 4px,
+          transparent 4px,
+          transparent 12px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          #fff,
+          #fff 4px,
+          transparent 0,
+          transparent 10px
+        );
+      opacity: 0.1;
+    }
   }
 
   &-square {
@@ -57,15 +55,19 @@ $box-width: 400px;
     position: absolute;
     @include z-index(item);
     left: 0;
-    top: $header-height-pc + $video-height / 4;
+    top: 350px;
     background-color: $color-main;
     width: 42%;
     min-width: $box-width;
-    height: $video-height / 2;
+    height: 350px;
     opacity: 0.9;
 
     @include media(m) {
-      top: 70px;
+      position: relative;
+      top: -100px;
+      max-width: 400px;
+      width: 100%;
+      min-width: auto;
       height: $video-height-sp * 3 / 4;
     }
 
