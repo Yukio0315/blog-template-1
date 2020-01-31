@@ -1,0 +1,30 @@
+<transition name="slideLeft">
+  <section v-if="seenTopAnime.showBox" class="hero-image-square">
+    <nuxt-link to="/company" class="hero-image-square-content">
+      <transition name="fadeDown">
+        <h2
+          class="here-image-square-content-title"
+          v-if="seenTopAnime.showTitle"
+        >
+          Concept
+        </h2>
+      </transition>
+      <p class="here-image-square-content-underbar"></p>
+      <p class="here-image-square-content-sub-title">
+        This is a demo of JAMStack corporate site.
+      </p>
+      <p class="here-image-square-content-line">
+        Core technologies are Nuxt.js + Contentful + Netlify.
+      </p>
+      <p class="here-image-square-content-line">
+        Also I used Vuex, Scss, anime.js and so on.
+      </p>
+      <p class="here-image-square-content-line">
+        My mission is to make our life more convenient and useful.
+      </p>
+      <button class="here-image-square-content-button">
+        Click here to now more
+      </button>
+    </nuxt-link>
+  </section>
+</transition>

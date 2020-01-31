@@ -1,0 +1,21 @@
+$box-width: 400px;
+$video-height-sp: 432px;
+
+.hero-image-square {
+  display: grid;
+  grid-template-columns: 1fr $box-width;
+  grid-template-rows: 20% 1fr 10%;
+  @include z-index(item);
+  background-color: $color-main;
+  min-width: $box-width;
+  height: 350px;
+  opacity: 0.9;
+
+  &-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    color: white;
+    padding-left: 10%;
+    padding-right: 5%;
+  }
+}

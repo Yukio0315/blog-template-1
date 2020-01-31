@@ -1,0 +1,9 @@
+.main-content {
+  // display: flex;
+  &-hero-image {
+    max-height: 30%;
+  }
+  &-notification {
+    top: -200px;
+  }
+}

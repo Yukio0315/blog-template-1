@@ -1,14 +1,10 @@
-$video-width: 1600px;
-$video-height: 900px;
-$video-width-sp: 768px;
-$video-height-sp: 432px;
-$box-width: 400px;
-
 .hero-image {
+  @include media(m) {
+    margin-bottom: -100px;
+  }
   &-video {
     position: relative;
     padding-left: 130px;
-
     @include media(m) {
       padding: 0;
     }
@@ -71,36 +67,18 @@ $box-width: 400px;
       }
     }
   }
-
-  &-square {
-    display: grid;
-    grid-template-columns: 1fr $box-width;
-    grid-template-rows: 20% 1fr 10%;
+  &-box {
     position: absolute;
-    @include z-index(item);
+    top: $header-height-pc + 3px;
     left: 0;
-    top: 350px;
-    background-color: $color-main;
     width: 42%;
-    min-width: $box-width;
-    height: 350px;
-    opacity: 0.9;
-
     @include media(m) {
       position: relative;
-      top: -130px;
+      top: -100px;
       max-width: 400px;
       width: 100%;
       min-width: auto;
-      height: $video-height-sp * 3 / 4;
-    }
-
-    &-content {
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-      color: white;
-      padding-left: 10%;
-      padding-right: 5%;
+      height: 300px;
     }
   }
 }
