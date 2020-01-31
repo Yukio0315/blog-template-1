@@ -1,9 +1,59 @@
 .main-content {
-  // display: flex;
-  &-hero-image {
-    max-height: 30%;
-  }
   &-notification {
-    top: -200px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include media(m) {
+      flex-direction: column;
+    }
+    &-title {
+      padding: 0;
+      margin-left: 15px;
+      width: 150px;
+      text-align: center;
+      border: {
+        style: solid;
+        width: thin;
+        radius: 15px;
+        color: lightgray;
+      }
+    }
+    &-message {
+      font-size: 10px;
+      margin-left: 15px;
+      @include media(m) {
+        padding-top: 15px;
+      }
+    }
+  }
+  &-single-column {
+    text-align: center;
+    padding: {
+      top: 100px;
+      bottom: 50px;
+    }
+    &-title {
+      font-size: 50px;
+    }
+    &-sub {
+      font-size: 20px;
+    }
+    &-message {
+      padding-top: 20px;
+      font-size: 25px;
+    }
+    @include media(m) {
+      padding-top: 20px;
+      &-title {
+        font-size: 20px;
+      }
+      &-sub {
+        font-size: 15px;
+      }
+      &-message {
+        font-size: 15px;
+      }
+    }
   }
 }
