@@ -9,6 +9,21 @@
       class="hero-image-video-main"
     ></video>
     <div class="hero-image-video-wrap"></div>
+    <section v-if="$mq==='desktop'" class="hero-image-video-scroll">
+      <p class="hero-image-video-scroll-character">SCROLL</p>
+      <font-awesome-icon
+        icon="chevron-down"
+        class="hero-image-video-scroll-arrow-top"
+      />
+      <font-awesome-icon
+        icon="chevron-down"
+        class="hero-image-video-scroll-arrow-middle"
+      />
+      <font-awesome-icon
+        icon="chevron-down"
+        class="hero-image-video-scroll-arrow-bottom"
+      />
+    </section>
   </div>
   <transition name="slideLeft">
     <section v-if="seenTopAnime.showBox" class="hero-image-square">
@@ -40,19 +55,4 @@
       </nuxt-link>
     </section>
   </transition>
-  <section class="hero-image-scroll">
-    <p class="hero-image-scroll-character">scroll</p>
-    <font-awesome-icon
-      icon="chevron-down"
-      class="hero-image-scroll-arrow-top"
-    />
-    <font-awesome-icon
-      icon="chevron-down"
-      class="hero-image-scroll-arrow-middle"
-    />
-    <font-awesome-icon
-      icon="chevron-down"
-      class="hero-image-scroll-arrow-bottom"
-    />
-  </section>
 </section>

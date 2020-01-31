@@ -46,6 +46,30 @@ $box-width: 400px;
         );
       opacity: 0.1;
     }
+
+    &-scroll {
+      display: grid;
+      position: absolute;
+      bottom: 10px;
+      right: 45%;
+      left: 55%;
+      @include z-index(item);
+      color: white;
+
+      &-character {
+        text-align: center;
+        font-size: 15px;
+      }
+      &-arrow-top {
+        margin-left: 35%;
+      }
+      &-arrow-middle {
+        margin-left: 35%;
+      }
+      &-arrow-bottom {
+        margin-left: 35%;
+      }
+    }
   }
 
   &-square {
@@ -77,31 +101,6 @@ $box-width: 400px;
       color: white;
       padding-left: 10%;
       padding-right: 5%;
-    }
-  }
-
-  &-scroll {
-    display: grid;
-    position: absolute;
-    margin-top: 760px;
-    margin-left: 35%;
-    @include z-index(item);
-    color: white;
-
-    &-character {
-      font-size: 20px;
-    }
-
-    &-arrow-top {
-      margin-left: 15px;
-    }
-
-    &-arrow-middle {
-      margin-left: 15px;
-    }
-
-    &-arrow-bottom {
-      margin-left: 15px;
     }
   }
 }
