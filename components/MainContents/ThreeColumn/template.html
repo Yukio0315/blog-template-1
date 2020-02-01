@@ -1,0 +1,18 @@
+<section class="main-three-column">
+  <div
+    v-for="content in contents"
+    class="main-three-column-content"
+    :style="{ backgroundImage: `url(${content.image}), linear-gradient(${content.color}, ${content.color})`, backgroundSize: 'cover', backgroundBlendMode: 'overlay'}"
+  >
+    <h4 class="main-three-column-content-for">{{content.for}}</h4>
+    <h3 class="main-three-column-content-title">{{content.title}}</h3>
+    <h4 class="main-three-column-content-sub">{{content.sub}}</h4>
+    <p class="main-three-column-content-message">{{content.message}}</p>
+    <nuxt-link :to="content.url" class="main-three-column-content-button"
+      ><font-awesome-icon
+        icon="chevron-right"
+        class="main-three-column-content-button-right"
+      />{{content.button}}</nuxt-link
+    >
+  </div>
+</section>

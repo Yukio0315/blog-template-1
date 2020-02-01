@@ -1,7 +1,7 @@
 <template src="./template.html" />
 
 <script>
-import TheTopInfoBox from '@/components/TheHeroImage/TheTopInfoBox/TheTopInfoBox.vue'
+import TheTopInfoBox from '@/components/MainContents/TheHeroImage/TheTopInfoBox/TheTopInfoBox.vue'
 export default {
   components: {
     TheTopInfoBox

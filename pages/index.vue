@@ -1,13 +1,15 @@
 <template src="./template.html" />
 
 <script>
-import TheHeroImage from '@/components/TheHeroImage/TheHeroImage'
+import TheHeroImage from '@/components/MainContents/TheHeroImage/TheHeroImage'
 import GoogleMap from '@/components/GoogleMap/GoogleMap'
+import ThreeColumn from '@/components/MainContents/ThreeColumn/ThreeColumn'
 
 export default {
   components: {
     TheHeroImage,
-    GoogleMap
+    GoogleMap,
+    ThreeColumn
   },
   computed: {
     posts() {
