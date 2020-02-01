@@ -4,18 +4,53 @@ $video-height-sp: 432px;
 .hero-image-square {
   display: grid;
   grid-template-columns: 1fr $box-width;
-  grid-template-rows: 20% 1fr 10%;
+  grid-template-rows: 5% 1fr 3%;
   @include z-index(item);
   background-color: $color-main;
   min-width: $box-width;
-  height: 350px;
+  height: 370px;
   opacity: 0.9;
 
   &-content {
+    display: flex;
+    flex-direction: column;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     color: white;
-    padding-left: 10%;
-    padding-right: 5%;
+    padding: {
+      left: 10%;
+      right: 5%;
+    }
+    &-title {
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        display: inline-block;
+        width: 40px;
+        height: 3px;
+        background-color: white;
+      }
+    }
+    &-sub {
+      padding-bottom: 15px;
+      font-size: 25px;
+    }
+    &-message {
+      flex-basis: 80%;
+      font-size: 15px;
+    }
+    &-button {
+      color: white;
+      flex-basis: 20%;
+      align-self: flex-end;
+      &-arrow {
+        padding-right: 5px;
+      }
+    }
   }
 }
