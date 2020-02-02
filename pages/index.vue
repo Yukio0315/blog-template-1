@@ -1,13 +1,13 @@
 <template src="./template.html" />
 
 <script>
-import TheHeroImage from '@/components/MainContents/TheHeroImage/TheHeroImage'
+import TheHeroMovie from '@/components/KeyVisual/TheHeroMovie/TheHeroMovie'
 import GoogleMap from '@/components/GoogleMap/GoogleMap'
 import ThreeColumn from '@/components/MainContents/ThreeColumn/ThreeColumn'
 
 export default {
   components: {
-    TheHeroImage,
+    TheHeroMovie,
     GoogleMap,
     ThreeColumn
   },

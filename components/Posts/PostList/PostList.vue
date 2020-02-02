@@ -11,6 +11,11 @@ export default {
     posts: {
       type: Array,
       required: true
+    },
+    direction: {
+      type: String,
+      required: false,
+      default: 'vertical'
     }
   }
 }

@@ -1,3 +1,4 @@
+import moment from 'moment-mini'
 import ctfConfig from '~/lib/config'
 import { createClient } from '~/plugins/contentful'
 
@@ -13,15 +14,14 @@ export default {
           return {
             id: entry.sys.id,
             title: entry.fields.title,
-            image: entry.fields.heroImage,
+            image: entry.fields.heroImage.fields.file.url,
             tags: entry.fields.tags,
-            date: entry.fields.publishDate,
+            date: moment(entry.fields.publishDate).format('2013-02-08'),
             slug: entry.fields.slug
           }
         })
         commit('setPosts', result)
       })
-    // .catch((e) => context.error(e))
   },
   toggleMenu({ commit }) {
     commit('toggleMenu')

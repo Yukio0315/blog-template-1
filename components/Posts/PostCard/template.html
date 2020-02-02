@@ -1,7 +1,8 @@
 <nuxt-link :to="`/blog/${this.slug}`">
-  <article>
-    <div class="post-content">
-      <h2>{{ title }}</h2>
-    </div>
+  <article class="postcard" :class="direction">
+    <h2 class="postcard-title">{{ title }}</h2>
+    <p class="postcard-date">{{ date }}</p>
+    <p class="postcard-tag" v-for="tag in tags">{{ tag }}</p>
+    <img class="postcard-image" :src="image" />
   </article>
 </nuxt-link>

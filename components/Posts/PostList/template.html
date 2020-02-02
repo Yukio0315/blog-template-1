@@ -1,9 +1,12 @@
 <section class="post-list">
-  <div>aaa</div>
   <PostCard
     v-for="post in posts"
     :title="post.title"
+    :image="post.image"
+    :tags="post.tags"
+    :date="post.date"
     :slug="post.slug"
     :key="post.id"
+    :direction="direction"
   />
 </section>
