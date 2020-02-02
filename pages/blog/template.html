@@ -1,8 +1,6 @@
 <div>
-  <Breadcrumb :items="items" />
-  <section class="blog header">
-    <h2>blog</h2>
-  </section>
+  <KeyVisual :theme="theme" :image="image" />
+  <Breadcrumbs :items="items" />
   <section class="body-container">
     <PostList :posts="loadedPosts" direction="vertical" />
   </section>

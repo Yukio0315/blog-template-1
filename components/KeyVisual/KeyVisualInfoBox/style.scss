@@ -1,10 +1,9 @@
 $box-width: 400px;
 $video-height-sp: 432px;
 
-.hero-image-square {
+.key-visual-style-box {
   display: grid;
   grid-template-columns: 1fr $box-width;
-  grid-template-rows: 5% 1fr 3%;
   @include z-index(item);
   background-color: $color-main;
   min-width: $box-width;
@@ -24,27 +23,19 @@ $video-height-sp: 432px;
     &-title {
       position: relative;
       padding-bottom: 10px;
-      margin-bottom: 15px;
-      font-size: 20px;
+      margin-bottom: 30px;
+      font-size: 30px;
       &:before {
         @include under-bar(-3px, 40px, 3px);
       }
     }
     &-sub {
       padding-bottom: 15px;
-      font-size: 25px;
-    }
-    &-message {
-      flex-basis: 80%;
       font-size: 15px;
     }
-    &-button {
-      color: white;
-      flex-basis: 20%;
-      align-self: flex-end;
-      &-arrow {
-        padding-right: 5px;
-      }
+    &-info {
+      flex-basis: 80%;
+      font-size: 20px;
     }
   }
 }

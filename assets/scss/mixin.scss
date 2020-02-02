@@ -22,3 +22,71 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin key-visual-effect($width, $height) {
+  position: absolute;
+  top: 0px;
+  width: $width;
+  height: $height;
+
+  @include z-index(filter);
+  background-color: #dcf7f4;
+  background: repeating-linear-gradient(
+      45deg,
+      #fff,
+      #fff 4px,
+      transparent 4px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      #fff,
+      #fff 4px,
+      transparent 0,
+      transparent 10px
+    );
+  opacity: 0.1;
+}
+
+@mixin key-visual-info-box($top) {
+  position: absolute;
+  top: $top;
+  left: 0;
+  width: 42%;
+  @include media(m) {
+    position: relative;
+    top: -100px;
+    max-width: 400px;
+    width: 100%;
+    min-width: auto;
+    height: 300px;
+  }
+}
+
+@mixin key-visual-position {
+  position: relative;
+  padding-left: 130px;
+  @include media(m) {
+    padding: 0;
+  }
+}
+
+@mixin key-visual-size {
+  min-width: 100%;
+  max-width: 130%;
+  @include z-index(default);
+  @include media(m) {
+    top: 0;
+    padding: 0;
+  }
+}
+
+@mixin under-bar($bottom, $width, $height) {
+  content: '';
+  position: absolute;
+  bottom: $bottom;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-color: white;
+}

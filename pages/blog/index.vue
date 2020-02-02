@@ -3,18 +3,27 @@
 <script>
 import PostList from '@/components/Posts/PostList/PostList.vue'
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue'
+import KeyVisual from '@/components/KeyVisual/KeyVisual/KeyVisual.vue'
+import image from '@/assets/images/blog.jpg'
 
 export default {
   components: {
     PostList,
-    Breadcrumbs
+    Breadcrumbs,
+    KeyVisual
   },
   data() {
     return {
       items: [
         { text: 'Home', disabled: false, href: '/' },
         { text: 'Blog', disabled: true, href: 'blog' }
-      ]
+      ],
+      theme: {
+        title: 'BLOG',
+        sub: 'Sub title',
+        info: 'BLOG INFORMATION'
+      },
+      image
     }
   },
   computed: {

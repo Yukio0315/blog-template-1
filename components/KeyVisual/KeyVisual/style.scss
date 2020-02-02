@@ -1,0 +1,18 @@
+$image-height: 140px;
+
+.key-visual {
+  &-image {
+    @include key-visual-position;
+
+    &-main {
+      @include key-visual-size;
+    }
+
+    &-effect {
+      @include key-visual-effect(200%, 100%);
+    }
+  }
+  &-info-box {
+    @include key-visual-info-box($header-height-pc + $image-height);
+  }
+}

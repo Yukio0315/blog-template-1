@@ -1,18 +1,10 @@
 <template src="./template.html" />
 
 <script>
-import KeyVisualInfoBox from '@/components/KeyVisual/KeyVisualInfoBox/KeyVisualInfoBox.vue'
 export default {
-  components: {
-    KeyVisualInfoBox
-  },
   props: {
     theme: {
       type: Object,
-      required: true
-    },
-    image: {
-      type: String,
       required: true
     }
   }
