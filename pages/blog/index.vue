@@ -4,7 +4,7 @@
 import PostList from '@/components/Posts/PostList/PostList.vue'
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue'
 import KeyVisual from '@/components/KeyVisual/KeyVisual/KeyVisual.vue'
-import image from '@/assets/images/blog.jpg'
+import image from '@/assets/images/blog-image.jpg'
 
 export default {
   components: {

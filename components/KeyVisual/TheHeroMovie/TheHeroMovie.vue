@@ -2,16 +2,16 @@
 
 <script>
 import TheTopInfoBox from '@/components/KeyVisual/TheTopInfoBox/TheTopInfoBox.vue'
-import heroImage from '@/assets/images/hero-image.jpg'
+import keyVisual from '@/assets/images/key-visual.jpg'
 export default {
   components: {
     TheTopInfoBox,
-    heroImage
+    keyVisual
   },
   data() {
     return {
       image: {
-        heroImage
+        keyVisual
       }
     }
   }
