@@ -3,7 +3,6 @@ $layer: (
   header: 20,
   item: 10,
   filter: 5,
-  tooltip: 1,
   default: 1
 );
 
@@ -28,8 +27,6 @@ $breakpoints: (
   top: 0px;
   width: $width;
   height: $height;
-
-  @include z-index(filter);
   background-color: #dcf7f4;
   background: repeating-linear-gradient(
       45deg,
@@ -65,16 +62,16 @@ $breakpoints: (
 
 @mixin key-visual-position {
   position: relative;
-  padding-left: 130px;
+  margin-left: 6%;
+
   @include media(m) {
+    margin-left: 0;
     padding: 0;
   }
 }
 
 @mixin key-visual-size {
-  min-width: 100%;
   max-width: 130%;
-  @include z-index(default);
   @include media(m) {
     top: 0;
     padding: 0;
