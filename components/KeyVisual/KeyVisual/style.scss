@@ -1,6 +1,9 @@
 $image-height: 140px;
 
 .key-visual {
+  @include media(m) {
+    margin-bottom: -100px;
+  }
   &-image {
     @include key-visual-position;
 

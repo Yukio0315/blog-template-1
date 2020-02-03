@@ -15,6 +15,7 @@ export default {
             id: entry.sys.id,
             title: entry.fields.title,
             image: entry.fields.heroImage.fields.file.url,
+            overview: entry.fields.overview,
             tags: entry.fields.tags,
             date: moment(entry.fields.publishDate).format('2013-02-08'),
             slug: entry.fields.slug

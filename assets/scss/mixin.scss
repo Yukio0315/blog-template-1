@@ -81,12 +81,12 @@ $breakpoints: (
   }
 }
 
-@mixin under-bar($bottom, $width, $height) {
+@mixin under-bar($bottom, $left, $width, $height, $color) {
   content: '';
   position: absolute;
   bottom: $bottom;
-  display: inline-block;
+  left: $left;
   width: $width;
   height: $height;
-  background-color: white;
+  background-color: $color;
 }

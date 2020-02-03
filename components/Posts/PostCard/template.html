@@ -1,8 +1,12 @@
-<nuxt-link :to="`/blog/${this.slug}`">
+<nuxt-link :to="`/blog/${post.slug}`">
   <article class="postcard" :class="direction">
-    <h2 class="postcard-title">{{ title }}</h2>
-    <p class="postcard-date">{{ date }}</p>
-    <p class="postcard-tag" v-for="tag in tags">{{ tag }}</p>
-    <img class="postcard-image" :src="image" />
+    <img class="postcard-image" :src="post.image" />
+    <section class="postcard-tag">
+      <p class="postcard-tag-item" v-for="tag in post.tags">{{ tag }}<br /></p>
+    </section>
+    <p class="postcard-date">{{ post.date }}</p>
+    <h2 class="postcard-title">{{ post.title }}</h2>
+    <p class="postcard-overview">{{ post.overview }}</p>
+    <MoreButton class="postcard-more-button" />
   </article>
 </nuxt-link>

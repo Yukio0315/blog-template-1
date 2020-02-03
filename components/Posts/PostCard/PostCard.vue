@@ -1,27 +1,15 @@
 <template src="./template.html" />
 
 <script>
+import MoreButton from '@/components/Ui/MoreButton/MoreButton'
+
 export default {
-  name: 'PostCard',
+  components: {
+    MoreButton
+  },
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    image: {
-      type: String,
-      required: true
-    },
-    date: {
-      type: String,
-      required: true
-    },
-    tags: {
-      type: Array,
-      required: true
-    },
-    slug: {
-      type: String,
+    post: {
+      type: Object,
       required: true
     },
     direction: {

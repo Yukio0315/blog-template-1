@@ -25,8 +25,8 @@ $video-height-sp: 432px;
       padding-bottom: 10px;
       margin-bottom: 30px;
       font-size: 30px;
-      &:before {
-        @include under-bar(-3px, 40px, 3px);
+      &::before {
+        @include under-bar(-3px, 0px, 40px, 3px, white);
       }
     }
     &-sub {

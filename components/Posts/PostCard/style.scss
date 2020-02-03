@@ -1,0 +1,98 @@
+$base-width: ($width-base / 3) - 30px;
+$image-height: 230px;
+$tag-length: 80px;
+$text-height: 80px;
+$more-height: 80px;
+
+.postcard {
+  display: grid;
+  grid-template-rows: $image-height $tag-length $text-height $more-height;
+  grid-template-columns: 100px auto 100px;
+  background-color: white;
+  width: $base-width;
+  overflow: hidden;
+  @include media(m) {
+    width: 100%;
+    max-width: $base-width + 200px;
+    min-width: $base-width;
+  }
+  &:hover {
+    .postcard-image {
+      transform: scale(1.1);
+      transition-duration: 0.3s;
+    }
+    .postcard-title {
+      text-decoration: underline;
+    }
+    .postcard-more-button {
+      text-decoration: underline;
+    }
+  }
+  &-image {
+    grid-row: 1/ 2;
+    grid-column: 1 / 4;
+    width: 100%;
+    max-width: $base-width + 200px;
+    min-width: $base-width;
+    height: $image-height;
+    object-fit: cover;
+    transition-duration: 0.3s;
+  }
+  &-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include z-index(item);
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    margin-top: -$tag-length / 2;
+    width: $tag-length;
+    height: $tag-length;
+    text-align: center;
+    background-color: $color-main;
+    color: white;
+  }
+  &-date {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    top: $image-height;
+    text-align: right;
+    padding-right: 10px;
+    @include z-index(default);
+    color: $color-main;
+  }
+  &-title {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    margin-top: 10px;
+    @include z-index(default);
+    text-align: center;
+    color: $color-main;
+    &::after {
+      content: '';
+      display: block;
+      width: 35px;
+      height: 3px;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: $color-main;
+    }
+  }
+  &-overview {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+  }
+  &-more-button {
+    grid-row: 4 / 5;
+    grid-column: 3 / 4;
+    color: $color-main;
+  }
+}

@@ -1,6 +1,6 @@
-<div>
-  <KeyVisual :theme="theme" :image="image" />
-  <Breadcrumbs :items="items" />
+<div class="blog">
+  <KeyVisual :theme="theme" :image="image" class="blog-key-visual" />
+  <Breadcrumbs :items="items" class="blog-breadcrumbs" />
   <section class="body-container">
     <PostList :posts="loadedPosts" direction="vertical" />
   </section>

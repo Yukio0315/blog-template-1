@@ -1,12 +1,9 @@
 <section class="post-list">
   <PostCard
     v-for="post in posts"
-    :title="post.title"
-    :image="post.image"
-    :tags="post.tags"
-    :date="post.date"
-    :slug="post.slug"
+    :post="post"
     :key="post.id"
     :direction="direction"
+    class="post-list-card"
   />
 </section>
