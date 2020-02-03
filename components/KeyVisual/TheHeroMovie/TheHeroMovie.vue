@@ -2,9 +2,18 @@
 
 <script>
 import TheTopInfoBox from '@/components/KeyVisual/TheTopInfoBox/TheTopInfoBox.vue'
+import heroImage from '@/assets/images/hero-image.jpg'
 export default {
   components: {
-    TheTopInfoBox
+    TheTopInfoBox,
+    heroImage
+  },
+  data() {
+    return {
+      image: {
+        heroImage
+      }
+    }
   }
 }
 </script>
