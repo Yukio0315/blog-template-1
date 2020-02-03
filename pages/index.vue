@@ -11,6 +11,11 @@ export default {
     GoogleMap,
     ThreeColumn
   },
+  data() {
+    return {
+      loading: false
+    }
+  },
   computed: {
     posts() {
       return this.$store.getters.posts
@@ -18,6 +23,13 @@ export default {
   },
   async fetch({ store, params }) {
     await store.dispatch('fetchPosts')
+  },
+  created() {
+    console.log(`load start: ${this.loading}`)
+  },
+  mounted() {
+    this.loading = true
+    console.log(`load end: ${this.loading}`)
   }
 }
 </script>
