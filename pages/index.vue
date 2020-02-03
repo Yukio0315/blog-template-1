@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      loading: false
+      loading: true
     }
   },
   computed: {
