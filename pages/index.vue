@@ -18,7 +18,8 @@ export default {
     return {
       color: '#29206d',
       size: '50px',
-      loading: true
+      loading: true,
+      keyMovie: ''
     }
   },
   computed: {
