@@ -3,16 +3,20 @@
 <script>
 import TheTopInfoBox from '@/components/KeyVisual/TheTopInfoBox/TheTopInfoBox.vue'
 import keyVisual from '@/assets/images/key-visual.jpg'
+
 export default {
   components: {
-    TheTopInfoBox,
-    keyVisual
+    TheTopInfoBox
+  },
+  props: {
+    keyMovie: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {
-      image: {
-        keyVisual
-      }
+      keyVisual
     }
   }
 }

@@ -71,7 +71,7 @@ $breakpoints: (
 }
 
 @mixin key-visual-size {
-  max-width: 130%;
+  width: 110%;
   @include media(m) {
     top: 0;
     padding: 0;

@@ -3,7 +3,7 @@ import ctfConfig from '~/lib/config'
 import { createClient } from '~/plugins/contentful'
 
 export default {
-  async fetchPosts({ commit }, context) {
+  async nuxtServerInit({ commit }) {
     await createClient()
       .getEntries({
         content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID,

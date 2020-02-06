@@ -1,16 +1,17 @@
 <section class="hero-image">
   <div class="hero-image-video">
-    <img :src="image.keyVisual" class="hero-image-video-dummy" />
+    <img :src="keyVisual" class="hero-image-video-dummy" />
     <video
-      src="~/assets/movies/heroMovie.mp4"
       autoplay
       loop
       muted
       playsinline
       type="video/mp4"
-      :poster="image.keyVisual"
+      :poster="keyVisual"
       class="hero-image-video-main"
-    ></video>
+    >
+      <source :src="keyMovie" />
+    </video>
     <div class="hero-image-video-wrap"></div>
     <section v-if="$mq==='desktop'" class="hero-image-video-scroll">
       <p class="hero-image-video-scroll-character">SCROLL</p>
