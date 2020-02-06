@@ -27,7 +27,7 @@ export default {
       return this.$store.getters.posts
     }
   },
-  asyncData({ store }) {
+  asyncData() {
     return createClient()
       .getAsset(process.env.CTF_KEY_VISUAL_ASSET_ID)
       .then((asset) => {
