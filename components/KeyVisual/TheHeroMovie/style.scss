@@ -4,13 +4,8 @@
   }
   &-video {
     @include key-visual-position;
-    &-dummy {
-      @include key-visual-size;
-    }
     &-main {
       @include key-visual-size;
-      position: absolute;
-      top: 0;
     }
     &-wrap {
       @include key-visual-effect(200%, 100%);
