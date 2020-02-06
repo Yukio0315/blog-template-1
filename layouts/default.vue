@@ -1,19 +1,37 @@
 <template>
-  <div class="default">
-    <TheHeader class="header" />
-    <nuxt class="main" />
-    <TheFooter class="footer" />
+  <div>
+    <div v-show="!loadCompleted" class="loader">
+      <ring-loader
+        :loading="loadCompleted"
+        color="#29206d"
+        class="loader-ling"
+      ></ring-loader>
+    </div>
+    <div v-show="loadCompleted" class="default">
+      <TheHeader class="header" />
+      <nuxt class="main" />
+      <TheFooter class="footer" />
+    </div>
   </div>
 </template>
 
 <script>
+import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import TheHeader from '@/components/Navigation/TheHeader/TheHeader'
 import TheFooter from '@/components/Navigation/TheFooter/TheFooter'
 
 export default {
   components: {
     TheHeader,
-    TheFooter
+    TheFooter,
+    RingLoader
+  },
+  computed: {
+    loadCompleted() {
+      if (this.$store.state.keyMovie && this.$store.state.headerLoaded)
+        return true
+      return false
+    }
   }
 }
 </script>
@@ -28,6 +46,12 @@ body {
 }
 a {
   text-decoration: none;
+}
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .default {
   margin: auto;

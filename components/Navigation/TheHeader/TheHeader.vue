@@ -34,6 +34,7 @@ export default {
     }
   },
   mounted() {
+    this.$store.commit('showHeader')
     window.addEventListener('scroll', this.calculateScrollY)
   },
   beforeDestroy() {
