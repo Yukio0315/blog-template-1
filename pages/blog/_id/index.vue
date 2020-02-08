@@ -16,7 +16,7 @@ export default {
     return {
       items: [
         { text: 'Home', disabled: false, href: '/' },
-        { text: 'Blog', disabled: true, href: 'blog' }
+        { text: 'Blog', disabled: true, href: 'blog/entries' }
       ],
       theme: {
         title: 'BLOG',
@@ -26,10 +26,9 @@ export default {
       image
     }
   },
-  computed: {
-    loadedPosts() {
-      return this.$store.getters.loadedPosts
-    }
+  asyncData({ params }) {
+    const loadedPosts = require(`@/dist/_nuxt/blog/${params.id}`)
+    return { loadedPosts }
   }
 }
 </script>

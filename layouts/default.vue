@@ -28,10 +28,16 @@ export default {
   },
   computed: {
     loadCompleted() {
-      if (this.$store.state.keyMovie && this.$store.state.headerLoaded)
-        return true
-      return false
+      return this.$store.state.loadCompleted
     }
+  },
+  created() {
+    if (this.$store.state.loadCompleted) {
+      this.$store.commit('toggleLoading')
+    }
+  },
+  mounted() {
+    this.$store.commit('toggleLoading')
   }
 }
 </script>

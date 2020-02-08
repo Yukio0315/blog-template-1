@@ -5,8 +5,8 @@ export default {
   setKeyMovie(state, keyMovie) {
     state.keyMovie = keyMovie
   },
-  showHeader(state) {
-    state.headerLoaded = true
+  toggleLoading(state) {
+    state.loadCompleted = !state.loadCompleted
   },
   toggleMenu(state) {
     state.displayMenu = !state.displayMenu

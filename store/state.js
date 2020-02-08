@@ -2,7 +2,7 @@ export default () => ({
   posts: [],
   displayMenu: false,
   keyMovie: '',
-  headerLoaded: false,
+  loadCompleted: true,
   seenTopAnime: {
     showBox: false,
     showTitle: false

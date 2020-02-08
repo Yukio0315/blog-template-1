@@ -1,7 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 import StylelintPlugin from 'stylelint-webpack-plugin'
-import ctfConfig from './lib/config'
-import { createClient } from './plugins/contentful'
 
 export default {
   mode: 'universal',
@@ -70,6 +68,7 @@ export default {
    */
   modules: [
     '@nuxtjs/style-resources',
+    '~/modules/generator.js',
     [
       'nuxt-fontawesome',
       {
@@ -157,21 +156,5 @@ export default {
   layoutTransition: {
     name: 'fade',
     mode: 'out-in'
-  },
-  generate: {
-    routes() {
-      return createClient(ctfConfig)
-        .getEntries({
-          content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
-        })
-        .then((entries) => {
-          return entries.items.map((entry) => {
-            return {
-              route: `/blog/${entry.fields.slug}`,
-              payload: entry.fields
-            }
-          })
-        })
-    }
   }
 }
