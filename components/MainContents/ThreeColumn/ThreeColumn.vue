@@ -1,9 +1,9 @@
 <template src="./template.html" />
 
 <script>
-import first from '@/assets/images/first.jpg'
-import second from '@/assets/images/second.jpg'
-import third from '@/assets/images/third.jpg'
+import first from '@/static/data/assets/first.json'
+import second from '@/static/data/assets/second.json'
+import third from '@/static/data/assets/third.json'
 
 export default {
   data() {

@@ -18,6 +18,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "animejs": "^3.1.0",
     "fibers": "^4.0.2",
+    "fs-extra": "^8.1.0",
     "marked": "^0.8.0",
     "moment-mini": "^2.22.1",
     "normalize.css": "^8.0.1",

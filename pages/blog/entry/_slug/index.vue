@@ -9,9 +9,8 @@ export default {
       return marked(this.post.description)
     }
   },
-  asyncData({ params, error }) {
-    const post = require(`@/dist/_nuxt/blog/entry/${params.slug}`)
-    return { post }
+  asyncData({ params }) {
+    return { post: require(`@/static/data/blog/entry/${params.slug}.json`) }
   }
 }
 </script>

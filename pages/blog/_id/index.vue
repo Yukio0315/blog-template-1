@@ -4,7 +4,7 @@
 import PostList from '@/components/Posts/PostList/PostList.vue'
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue'
 import KeyVisual from '@/components/KeyVisual/KeyVisual/KeyVisual.vue'
-import image from '@/assets/images/blog-image.jpg'
+import image from '@/static/data/assets/blog-image'
 
 export default {
   components: {
@@ -16,7 +16,7 @@ export default {
     return {
       items: [
         { text: 'Home', disabled: false, href: '/' },
-        { text: 'Blog', disabled: true, href: 'blog/entries' }
+        { text: 'Blog', disabled: true, href: 'blog' }
       ],
       theme: {
         title: 'BLOG',
@@ -27,8 +27,7 @@ export default {
     }
   },
   asyncData({ params }) {
-    const loadedPosts = require(`@/dist/_nuxt/blog/${params.id}`)
-    return { loadedPosts }
+    return { loadedPosts: require(`@/static/data/blog/${params.id}.json`) }
   }
 }
 </script>

@@ -14,16 +14,16 @@ export default {
   computed: {
     posts() {
       return this.$store.state.posts
-    },
-    keyMovie() {
-      return this.$store.state.keyMovie
     }
-  },
-  async fetch({ store }) {
-    if (!store.state.keyMovie) {
-      await store.dispatch('fetchKeyMovie')
-    }
+    // keyMovie() {
+    //   return this.$store.state.keyMovie
+    // }
   }
+  // async fetch({ store }) {
+  //   if (!store.state.keyMovie) {
+  //     await store.dispatch('fetchKeyMovie')
+  //   }
+  // }
 }
 </script>
 

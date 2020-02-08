@@ -68,7 +68,7 @@ export default {
    */
   modules: [
     '@nuxtjs/style-resources',
-    '~/modules/generator.js',
+    '~/modules/scrape.js',
     [
       'nuxt-fontawesome',
       {

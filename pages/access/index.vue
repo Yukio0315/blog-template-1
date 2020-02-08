@@ -5,6 +5,7 @@ import GoogleMap from '@/components/GoogleMap/GoogleMap.vue'
 import BreadCrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue'
 import AccessTable from '@/components/Access/AccessTable/AccessTable.vue'
 import Transportation from '@/components/Access/Transportation/Transportation.vue'
+import icon from '@/static/data/assets/logo-small.json'
 
 export default {
   components: {
@@ -28,7 +29,7 @@ export default {
             offset: { X: 35, Y: -12 }
           }
         ],
-        icon: 'static-logo-small.png',
+        icon,
         size: { height: '600px', width: '600px' }
       }
     }
