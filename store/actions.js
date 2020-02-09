@@ -26,12 +26,5 @@ export default {
   },
   toggleMenu({ commit }) {
     commit('toggleMenu')
-  },
-  async fetchKeyMovie({ commit }) {
-    await createClient()
-      .getAsset(process.env.CTF_KEY_VISUAL_ASSET_ID)
-      .then((asset) => {
-        commit('setKeyMovie', asset.fields.file.url)
-      })
   }
 }

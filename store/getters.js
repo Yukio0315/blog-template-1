@@ -1,5 +1,5 @@
 export default {
-  loadedPosts(state) {
-    return state.posts
+  sortBlog(state) {
+    return state.sort
   }
 }

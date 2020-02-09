@@ -2,9 +2,6 @@ export default {
   setPosts(state, posts) {
     state.posts = posts
   },
-  setKeyMovie(state, keyMovie) {
-    state.keyMovie = keyMovie
-  },
   toggleLoading(state) {
     state.loadCompleted = !state.loadCompleted
   },
@@ -13,5 +10,8 @@ export default {
   },
   seenTopAnime(state, payload) {
     state.seenTopAnime[payload] = true
+  },
+  setSortState(state, sort) {
+    state.sort = sort
   }
 }

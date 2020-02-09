@@ -1,7 +1,8 @@
-<div class="blog">
+<section class="blog">
   <KeyVisual :theme="theme" :image="image" class="blog-key-visual" />
   <Breadcrumbs :items="items" class="blog-breadcrumbs" />
+  <SortSelectBox :tags="tags" />
   <section class="body-container">
     <PostList :posts="loadedPosts" direction="vertical" />
   </section>
-</div>
+</section>
