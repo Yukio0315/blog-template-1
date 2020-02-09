@@ -1,6 +1,8 @@
 <template src="./template.html" />
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: {
     tags: {
@@ -12,7 +14,7 @@ export default {
     return {
       first: 'Date',
       second: 'Desk',
-      options: ['Date', 'Title', 'Popular', 'Initial', 'Tag'],
+      options: ['Date', 'Title', 'Popularity', 'Initial', 'Tag'],
       secondOptions: ['Desk', 'Ask']
     }
   },
@@ -38,11 +40,31 @@ export default {
           break
       }
     },
-    setSortStatus() {
-      this.$store.commit('setSortState', {
-        first: this.first,
-        second: this.second
-      })
+    ...mapActions([
+      'sortBlogByDate',
+      'sortBlogByTitle',
+      'sortBlogByPopularity',
+      'filterBlogByInitial',
+      'filterBlogByTag'
+    ]),
+    filterOrSortBlog(value) {
+      switch (this.first) {
+        case 'Date':
+          this.sortBlogByDate(value)
+          break
+        case 'Title':
+          this.sortBlogByTitle(value)
+          break
+        case 'Popularity':
+          this.sortBlogByPopularity(value)
+          break
+        case 'Initial':
+          this.filterBlogByInitial(value)
+          break
+        case 'Tag':
+          this.filterBlogByTag(value)
+          break
+      }
     }
   }
 }

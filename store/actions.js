@@ -17,7 +17,7 @@ export default {
             image: entry.fields.heroImage.fields.file.url,
             overview: entry.fields.overview,
             tags: entry.fields.tags,
-            date: moment(entry.fields.publishDate).format('2013-02-08'),
+            date: moment(entry.fields.publishDate).format('YYYY-MM-DD'),
             slug: entry.fields.slug
           }
         })
@@ -26,5 +26,35 @@ export default {
   },
   toggleMenu({ commit }) {
     commit('toggleMenu')
+  },
+  sortBlogByDate({ commit, state }, direction) {
+    if (direction === 'Ask')
+      commit(
+        'setPosts',
+        [...state.posts].sort((a, b) => moment(a.date).diff(moment(b.date)))
+      )
+    if (direction === 'Desk')
+      commit(
+        'setPosts',
+        [...state.posts].sort((a, b) => moment(b.date).diff(moment(a.date)))
+      )
+  },
+  sortBlogByTitle({ commit, state }, direction) {
+    if (direction === 'Ask')
+      commit(
+        'setPosts',
+        [...state.posts].sort((a, b) => {
+          if (a.slug < b.slug) return -1
+          if (a.slug > b.slug) return 1
+        })
+      )
+    if (direction === 'Desk')
+      commit(
+        'setPosts',
+        [...state.posts].sort((a, b) => {
+          if (a.slug < b.slug) return 1
+          if (a.slug > b.slug) return -1
+        })
+      )
   }
 }

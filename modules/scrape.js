@@ -34,10 +34,15 @@ export default function scraper() {
         image: entry.fields.heroImage.fields.file.url,
         overview: entry.fields.overview,
         tags: entry.fields.tags,
-        date: moment(entry.fields.publishDate).format('2013-02-08'),
+        date: moment(entry.fields.publishDate).format('YYYY-MM-DD'),
         slug: entry.fields.slug
       })
-      scraper.push(writeData(`static/data/blog/${id}.json`, posts))
+      scraper.push(
+        writeData(
+          `static/data/blog/${id}.json`,
+          posts.sort((a, b) => moment(b.date).diff(moment(a.date)))
+        )
+      )
     })
 
     const assets = await createClient().getEntry(

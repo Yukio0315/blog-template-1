@@ -1,6 +1,6 @@
 <section>
-  <label for="name">Sort</label>
-  <v-select :options="options" v-model="first" :value="$store.state.sort.first" placeholder="Sort" @input="handleChange"></v-select>
-  <v-select :options="secondOptions" v-model='second' :value="$store.state.sort.second" placeholder="Sort" @input="setSortStatus"></v-select>
+  <label for="name">Sort or filter</label>
+  <v-select :options="options" v-model="first" placeholder="Choose one" @input="handleChange"></v-select>
+  <v-select :options="secondOptions" v-model='second' placeholder="Choose one" @input="filterOrSortBlog"></v-select>
   </select>
 </section>

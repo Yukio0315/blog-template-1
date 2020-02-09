@@ -31,8 +31,8 @@ export default {
     }
   },
   computed: {
-    sortedBlog() {
-      return this.$store.getters.sortBlog
+    sortedPosts() {
+      return this.$store.state.posts
     }
   },
   asyncData({ params }) {
