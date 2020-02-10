@@ -20,35 +20,34 @@ export default function scraper() {
 
     let posts = []
     const NumOfPosts = entries.items.length
-    entries.items.forEach((entry, i) => {
-      scraper.push(
-        writeData(
-          `static/data/blog/entry/${entry.fields.slug}.json`,
-          entry.fields
-        )
+    entries.items
+      .sort((a, b) =>
+        moment(b.fields.publishDate).diff(moment(a.fields.publishDate))
       )
-
-      const pageLimit = variables.LIMIT_OF_SINGLE_PAGE
-      const id = Math.floor(i / pageLimit) + 1
-      posts.push({
-        id: entry.sys.id,
-        title: entry.fields.title,
-        image: entry.fields.heroImage.fields.file.url,
-        overview: entry.fields.overview,
-        tags: entry.fields.tags,
-        date: moment(entry.fields.publishDate).format('YYYY-MM-DD'),
-        slug: entry.fields.slug
-      })
-      if (i + 1 === pageLimit * id || i + 1 === NumOfPosts) {
+      .forEach((entry, i) => {
         scraper.push(
           writeData(
-            `static/data/blog/${id}.json`,
-            posts.sort((a, b) => moment(b.date).diff(moment(a.date)))
+            `static/data/blog/entry/${entry.fields.slug}.json`,
+            entry.fields
           )
         )
-        posts = []
-      }
-    })
+
+        const pageLimit = variables.LIMIT_OF_SINGLE_PAGE
+        const id = Math.floor(i / pageLimit) + 1
+        posts.push({
+          id: entry.sys.id,
+          title: entry.fields.title,
+          image: entry.fields.heroImage.fields.file.url,
+          overview: entry.fields.overview,
+          tags: entry.fields.tags,
+          date: moment(entry.fields.publishDate).format('YYYY-MM-DD'),
+          slug: entry.fields.slug
+        })
+        if (i + 1 === NumOfPosts || i + 1 === pageLimit * id) {
+          scraper.push(writeData(`static/data/blog/${id}.json`, posts))
+          posts = []
+        }
+      })
 
     const assets = await createClient().getEntry(
       process.env.CTF_ASSETS_ENTRY_ID
