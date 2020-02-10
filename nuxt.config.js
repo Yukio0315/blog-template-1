@@ -75,7 +75,15 @@ export default {
         imports: [
           {
             set: '@fortawesome/free-solid-svg-icons',
-            icons: ['faBars', 'faTimes', 'faChevronRight', 'faChevronDown']
+            icons: [
+              'faBars',
+              'faTimes',
+              'faChevronRight',
+              'faChevronDown',
+              'faEllipsisH',
+              'faAngleDoubleLeft',
+              'faAngleDoubleRight'
+            ]
           },
           {
             set: '@fortawesome/free-brands-svg-icons',

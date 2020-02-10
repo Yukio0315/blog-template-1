@@ -1,21 +1,79 @@
 <section>
   <nuxt-link :to="`/blog/${getNowPage - 1}`" v-show="getNowPage !== 1"
-    >Prev</nuxt-link
-  >
+    ><font-awesome-icon icon="angle-double-left"
+  /></nuxt-link>
+
   <ul>
-    <li v-for="i in (getNowPage - 1)">
-      <nuxt-link :to="`/blog/${i}`">{{ i }}</nuxt-link>
-    </li>
-    <li>{{getNowPage}}</li>
-    <li v-for="j in (getMaxBlogPage - getNowPage)">
-      <nuxt-link :to="`/blog/${ j + getNowPage}`"
-        >{{ j+getNowPage }}
-      </nuxt-link>
-    </li>
+    <div v-if="changePagination">
+      <li v-for="i in (getNowPage - 1)">
+        <nuxt-link :to="`/blog/${i}`">{{ i }}</nuxt-link>
+      </li>
+      <li>{{getNowPage}}</li>
+      <li v-for="j in (calcLastPage - getNowPage)">
+        <nuxt-link :to="`/blog/${ j + getNowPage}`"
+          >{{ j+getNowPage }}
+        </nuxt-link>
+      </li>
+    </div>
+
+    <div v-else>
+      <div v-if="firstPagination">
+        <li v-for="i in (getNowPage - 1)">
+          <nuxt-link :to="`/blog/${i}`">{{ i }}</nuxt-link>
+        </li>
+        <li>{{getNowPage}}</li>
+        <li v-for="j in (switchNum - getNowPage)">
+          <nuxt-link :to="`/blog/${ j + getNowPage}`"
+            >{{ j + getNowPage }}
+          </nuxt-link>
+        </li>
+        <li><font-awesome-icon icon="ellipsis-h" /></li>
+        <li>
+          <nuxt-link :to="`/blog/${calcLastPage}`">{{calcLastPage}}</nuxt-link>
+        </li>
+      </div>
+
+      <div v-else-if="middlePagination">
+        <li><nuxt-link :to="`/blog/1`">{{1}}</nuxt-link></li>
+        <li><font-awesome-icon icon="ellipsis-h" /></li>
+        <li v-for="i in (getNowPage - 3)%(switchNum - 2)">
+          <nuxt-link :to="`/blog/${ i + getNowPage - 2 }`"
+            >{{ i + getNowPage - 2 }}</nuxt-link
+          >
+        </li>
+        <li>{{getNowPage}}</li>
+        <li v-for="j in (switchNum - 3 - (getNowPage - 3)%(switchNum - 2))">
+          <nuxt-link :to="`/blog/${ j + getNowPage}`"
+            >{{ j + getNowPage }}
+          </nuxt-link>
+        </li>
+        <li><font-awesome-icon icon="ellipsis-h" /></li>
+        <li>
+          <nuxt-link :to="`/blog/${calcLastPage}`">{{calcLastPage}}</nuxt-link>
+        </li>
+      </div>
+
+      <div v-else-if="finalPagination">
+        <li><nuxt-link :to="`/blog/1`">{{1}}</nuxt-link></li>
+        <li><font-awesome-icon icon="ellipsis-h" /></li>
+        <li v-for="i in (getNowPage - calcLastPage + switchNum -  1)">
+          <nuxt-link :to="`/blog/${i + calcLastPage - switchNum}`"
+            >{{ i + calcLastPage - switchNum }}</nuxt-link
+          >
+        </li>
+        <li>{{getNowPage}}</li>
+        <li v-for="j in (calcLastPage - getNowPage)">
+          <nuxt-link :to="`/blog/${ j + getNowPage}`"
+            >{{ j+getNowPage }}
+          </nuxt-link>
+        </li>
+      </div>
+    </div>
   </ul>
+
   <nuxt-link
     :to="`/blog/${getNowPage + 1}`"
-    v-show="getNowPage !== getMaxBlogPage"
-    >Next</nuxt-link
-  >
+    v-show="getNowPage !== calcLastPage"
+    ><font-awesome-icon icon="angle-double-right"
+  /></nuxt-link>
 </section>

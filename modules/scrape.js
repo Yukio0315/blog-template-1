@@ -28,7 +28,7 @@ export default function scraper() {
         )
       )
 
-      const pageLimit = variables.PAGE_LIMIT_OF_BLOG
+      const pageLimit = variables.LIMIT_OF_SINGLE_PAGE
       const id = Math.floor(i / pageLimit) + 1
       posts.push({
         id: entry.sys.id,

@@ -4,16 +4,39 @@
 import variables from '@/lib/variables'
 
 export default {
+  data() {
+    return {
+      switchNum: 5
+    }
+  },
   computed: {
-    getMaxBlogPage() {
+    calcLastPage() {
       return (
         Math.floor(
-          this.$store.state.posts.length / variables.PAGE_LIMIT_OF_BLOG
+          this.$store.state.posts.length / variables.LIMIT_OF_SINGLE_PAGE
         ) + 1
       )
     },
     getNowPage() {
       return Number(this.$route.params.id)
+    },
+    changePagination() {
+      return this.calcLastPage <= this.switchNum + 2
+    },
+    firstPagination() {
+      return this.getNowPage <= this.switchNum
+    },
+    middlePagination() {
+      return (
+        this.getNowPage > this.switchNum &&
+        this.getNowPage <= this.calcLastPage - this.switchNum
+      )
+    },
+    finalPagination() {
+      return (
+        this.getNowPage > this.calcLastPage - this.switchNum &&
+        this.getNowPage <= this.calcLastPage
+      )
     }
   }
 }
