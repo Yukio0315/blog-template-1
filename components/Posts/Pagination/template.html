@@ -1,0 +1,21 @@
+<section>
+  <nuxt-link :to="`/blog/${getNowPage - 1}`" v-show="getNowPage !== 1"
+    >Prev</nuxt-link
+  >
+  <ul>
+    <li v-for="i in (getNowPage - 1)">
+      <nuxt-link :to="`/blog/${i}`">{{ i }}</nuxt-link>
+    </li>
+    <li>{{getNowPage}}</li>
+    <li v-for="j in (getMaxBlogPage - getNowPage)">
+      <nuxt-link :to="`/blog/${ j + getNowPage}`"
+        >{{ j+getNowPage }}
+      </nuxt-link>
+    </li>
+  </ul>
+  <nuxt-link
+    :to="`/blog/${getNowPage + 1}`"
+    v-show="getNowPage !== getMaxBlogPage"
+    >Next</nuxt-link
+  >
+</section>

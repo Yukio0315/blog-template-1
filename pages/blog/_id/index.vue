@@ -5,6 +5,7 @@ import PostList from '@/components/Posts/PostList/PostList.vue'
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue'
 import KeyVisual from '@/components/KeyVisual/KeyVisual/KeyVisual.vue'
 import SortSelectBox from '@/components/Posts/SortSelectBox/SortSelectBox.vue'
+import Pagination from '@/components/Posts/Pagination/Pagination.vue'
 import image from '@/static/data/assets/blog-image'
 import { createClient } from '@/plugins/contentful'
 
@@ -13,7 +14,8 @@ export default {
     PostList,
     Breadcrumbs,
     KeyVisual,
-    SortSelectBox
+    SortSelectBox,
+    Pagination
   },
   data() {
     return {
