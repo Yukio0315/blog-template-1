@@ -11,7 +11,10 @@ export default {
   seenTopAnime(state, payload) {
     state.seenTopAnime[payload] = true
   },
-  setSortState(state, sort) {
-    state.sort = sort
+  setSortOption(state, sort) {
+    state.sortOption = sort
+  },
+  isSorted(state) {
+    state.isSorted = true
   }
 }

@@ -33,12 +33,14 @@ export default {
     }
   },
   computed: {
-    sortedPosts() {
-      return this.$store.state.posts
+    loadCurrentPosts() {
+      return this.$store.getters.loadCurrentPosts(this.$route.params.id)
     }
   },
-  asyncData({ params }) {
-    return { loadedPosts: require(`@/static/data/blog/${params.id}.json`) }
+  asyncData({ params, store }) {
+    if (!store.state.isSorted) {
+      store.commit('setPosts', require(`@/static/data/blog/posts.json`))
+    }
   },
   created() {
     this.getTags()

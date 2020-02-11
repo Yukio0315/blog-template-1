@@ -2,7 +2,6 @@ import fs from 'fs-extra'
 import moment from 'moment-mini'
 import { createClient } from '../plugins/contentful'
 import ctfConfig from '../lib/config'
-import variables from '../lib/variables'
 
 export default function scraper() {
   const writeData = async (path, content) => {
@@ -18,7 +17,7 @@ export default function scraper() {
       content_type: ctfConfig.CTF_BLOG_POST_TYPE_ID
     })
 
-    let posts = []
+    const posts = []
     const NumOfPosts = entries.items.length
     entries.items
       .sort((a, b) =>
@@ -32,8 +31,6 @@ export default function scraper() {
           )
         )
 
-        const pageLimit = variables.LIMIT_OF_SINGLE_PAGE
-        const id = Math.floor(i / pageLimit) + 1
         posts.push({
           id: entry.sys.id,
           title: entry.fields.title,
@@ -43,9 +40,8 @@ export default function scraper() {
           date: moment(entry.fields.publishDate).format('YYYY-MM-DD'),
           slug: entry.fields.slug
         })
-        if (i + 1 === NumOfPosts || i + 1 === pageLimit * id) {
-          scraper.push(writeData(`static/data/blog/${id}.json`, posts))
-          posts = []
+        if (i === NumOfPosts - 1) {
+          scraper.push(writeData(`static/data/blog/posts.json`, posts))
         }
       })
 
