@@ -1,6 +1,6 @@
 <section>
   <label for="name">Sort or filter</label>
-  <v-select :options="options" :value="$store.state.sortOption.first" placeholder="Choose one" @input="handleChange"></v-select>
-  <v-select :options="secondOptions" :value="$store.state.sortOption.second" placeholder="Choose one" @input="filterOrSortBlog"></v-select>
+  <vue-select :options="options" :value="$store.state.sortOption.first" placeholder="Choose one" @input="handleChange"></vue-select>
+  <vue-select :options="secondOptions" :value="$store.state.sortOption.second" placeholder="Choose one" @input="filterOrSortBlog"></vue-select>
   </select>
 </section>
