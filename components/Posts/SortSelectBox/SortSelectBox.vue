@@ -38,7 +38,7 @@ export default {
 
     handleChange(first) {
       this.$store.commit('isSorted')
-      this.secondOptions = []
+      this.secondOptions.length = 0
       switch (first) {
         case 'Date':
           this.secondOptions.push('Desk', 'Ask')
